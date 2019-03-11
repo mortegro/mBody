@@ -1,0 +1,22 @@
+version: '3'
+services:
+
+  front:
+    image: mortegro/nuxt-md-cards
+    expose:
+    - "80"
+    - "443"
+    volumes:
+    - ./:/usr/src/app/
+    environment:
+      VIRTUAL_HOST: nuxt-md-cards.ecsplico.de
+      LETSENCRYPT_HOST: nuxt-md-cards.ecsplico.de
+      LETSENCRYPT_EMAIL: matthias.bolz@gmail.com
+
+networks:
+  default:
+    external:
+      name: nginx-proxy
+
+
+
