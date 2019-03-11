@@ -15,3 +15,10 @@ services:
       VIRTUAL_HOST: nuxt-md-cards.ecsplico.de
       LETSENCRYPT_HOST: nuxt-md-cards.ecsplico.de
       LETSENCRYPT_EMAIL: matthias.bolz@gmail.com
+    networks:
+      - nginxproxy_apps
+    restart: always
+
+networks:
+  nginxproxy_apps:
+    external: true
