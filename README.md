@@ -1,6 +1,10 @@
-# cleanlist
+# nuxt-md-cards
 
-> My gnarly Nuxt.js project
+Proof of Concept of nuxt using
+- pug templating
+- dropdown target route
+- vuetify
+- pouch database
 
 ## Build Setup
 
