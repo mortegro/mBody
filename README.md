@@ -1,10 +1,12 @@
 # nuxt-md-cards
 
-Proof of Concept of nuxt using
-- pug templating
-- dropdown target route
-- vuetify
-- pouch database
+Proof of Concept of nuxt using:
+* pug templating
+* vuetify
+* dropdown target route
+* pouch database
+* Sync Pouch to remote couchdb
+* progressive web app
 
 ## Build Setup
 
@@ -22,5 +24,3 @@ $ yarn start
 # generate static project
 $ yarn run generate
 ```
-
-For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
