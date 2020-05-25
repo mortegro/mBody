@@ -13,8 +13,8 @@
           hr.my-3
         v-card-actions
           v-spacer
-            v-btn(color='primary', flat='', nuxt='', to='/example') Simplest pouch Example
-            v-btn(color='primary', flat='', nuxt='', to='/example') Todo Example
+            v-btn(color='primary', text='', nuxt='', to='/example') Simplest pouch Example
+            v-btn(color='primary', text='', nuxt='', to='/example') Todo Example
 
 </template>
 

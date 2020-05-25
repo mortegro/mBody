@@ -1,6 +1,6 @@
 <template lang="pug">
   div
-    template(slot="toobar")
+    template(slot="toolbar")
       v-toolbar-title Test
     v-container
       v-flex(v-for="(item, index) in items", :key="item._id", @click.stop="edit(item)", xs12="", md6="")
@@ -9,15 +9,15 @@
       v-icon add
     v-dialog(v-model="dialog", fullscreen="", hide-overlay="", transition="dialog-bottom-transition", scrollable="")
       v-card(tile="")
-        v-toolbar(card='', dark='', color='primary')
+        v-app-bar(flat='', dark='', color='primary')
           v-btn(icon='', dark='', @click.native='dialog = false')
             v-icon close
           v-toolbar-title(v-if="selectedId") {{desc}} bearbeiten
           v-toolbar-title(v-else="") {{desc}} hinzufügen
           v-spacer
           v-toolbar-items
-            v-btn(v-if="selectedId", dark='', flat='', @click.native="confirmModal = true") Löschen
-            v-btn(dark='', flat='', @click.native="save") Speichern
+            v-btn(v-if="selectedId", dark='', text='', @click.native="confirmModal = true") Löschen
+            v-btn(dark='', text='', @click.native="save") Speichern
         component(:is="form", :item="editorItem")
     v-dialog(v-model='confirmModal', max-width='290')
       v-card
@@ -25,21 +25,21 @@
         v-card-text Wollen Sie {{editorItem.title}} wirklich löschen
         v-card-actions
           v-spacer
-          v-btn(color='green darken-1', flat='flat', @click.native='confirmModal = false') Nein
-          v-btn(color='green darken-1', flat='flat', @click.native='remove') Ja       
+          v-btn(color='green darken-1', text='flat', @click.native='confirmModal = false') Nein
+          v-btn(color='green darken-1', text='flat', @click.native='remove') Ja       
       v-btn(fab="", bottom="", right="", color="pink", dark="", fixed="", @click.stop="create")
         v-icon add
       v-dialog(v-model="dialog", fullscreen="", hide-overlay="", transition="dialog-bottom-transition", scrollable="")
         v-card(tile="")
-          v-toolbar(card='', dark='', color='primary')
+          v-app-bar(app="", dark='', color='primary')
             v-btn(icon='', dark='', @click.native='dialog = false')
               v-icon close
             v-toolbar-title(v-if="selectedId") {{desc}} bearbeiten
             v-toolbar-title(v-else="") {{desc}} hinzufügen
             v-spacer
             v-toolbar-items
-              v-btn(dark='', flat='', @click.native="save") Speichern
-              v-btn(v-if="selectedId", dark='', flat='', @click.native="confirmModal = true") Löschen
+              v-btn(dark='', text='', @click.native="save") Speichern
+              v-btn(v-if="selectedId", dark='', text='', @click.native="confirmModal = true") Löschen
           component(:is="form", :item="editorItem")
       v-dialog(v-model='confirmModal', max-width='290')
         v-card
@@ -47,8 +47,8 @@
           v-card-text Wollen Sie {{selectedId}} wirklich löschen
           v-card-actions
             v-spacer
-            v-btn(color='green darken-1', flat='flat', @click.native='confirmModal = false') Nein
-            v-btn(color='green darken-1', flat='flat', @click.native='remove') Ja       
+            v-btn(color='green darken-1', text='flat', @click.native='confirmModal = false') Nein
+            v-btn(color='green darken-1', text='flat', @click.native='remove') Ja       
 </template>
 
 <script>

@@ -8,7 +8,7 @@
             v-list-item-action
               v-checkbox(:input-value='allChecked', @change='toggleAll(!allChecked)', color='primary', v-if='todos.length > 0')
               v-icon(color='primary', v-else='') check
-            v-text-field(:label="'New todo input'", @keydown.enter='addTodo', autofocus='', browser-autocomplete='off', clearable='', color='primary', flat='', hide-details='', maxlength='1023', placeholder='What needs to be done?', solo='', v-model='newTodo')
+            v-text-field(:label="'New todo input'", @keydown.enter='addTodo', autofocus='', browser-autocomplete='off', clearable='', color='primary', text='', hide-details='', maxlength='1023', placeholder='What needs to be done?', solo='', v-model='newTodo')
       v-card.mt-3(v-show='todos.length')
         v-progress-linear.my-0(v-model='progressPercentage')
         v-card-actions.px-3(v-show='todos.length')
@@ -16,7 +16,7 @@
             | {{ remaining }} {{ remaining | pluralize('item') }} left
           v-spacer
           v-btn-toggle.elevation-0(mandatory='', v-model='visibility', v-show='todos.length')
-            v-btn.mx-0(:key='key', @click='visibility = key', :value='key', color='primary', flat='', small='', v-for='(val, key) in filters')
+            v-btn.mx-0(:key='key', @click='visibility = key', :value='key', color='primary', text='', small='', v-for='(val, key) in filters')
               | {{ key | capitalize }}
         v-list.pa-0
           template(v-for='todo in filteredTodos')

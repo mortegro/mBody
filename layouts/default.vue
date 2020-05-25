@@ -7,9 +7,12 @@
             v-icon(v-html="item.icon")
           v-list-item-content
             v-list-item-title(v-text="item.title")
-    v-app-bar( app="", :clipped-left="clipped", fixed="")
+    v-app-bar( flat="", fixed="")
       v-app-bar-nav-icon(@click="drawer = !drawer")
-      v-app-bar-title(v-text="title")
+      v-toolbar-title(v-text="title")
+      v-spacer
+      v-btn(icon="")
+        v-icon mdi-heart
     v-content
       v-container(fluid="")
         nuxt
@@ -26,6 +29,9 @@
         fixed: false,
         items: [
           { icon: 'apps', title: 'Welcome', to: '/' },
+          { icon: 'apps', title: 'Todo Example', to: '/example' },
+          { icon: 'apps', title: 'Todos', to: '/todos' },
+          { icon: 'apps', title: 'Share Target', to: '/share-target' },
           { icon: 'edit', title: 'ItemEditor', to: '/itemeditor' },
         ],
         miniVariant: false,

@@ -12,7 +12,7 @@ export default {
   props: ['item'],
   computed: {
     compiledMarkdown: function () {
-      return marked(this.item.description, { sanitize: true })
+      return marked(this.item.description || '', { sanitize: true })
     }
   }
 }

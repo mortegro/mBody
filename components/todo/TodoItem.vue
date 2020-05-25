@@ -6,9 +6,9 @@
     template(v-if="!editing")
       v-list-item-content(:class="{ 'primary--text': todo.done }", @dblclick="editing = true") {{ todo.title }}
         v-list-item-action
-          v-btn(@click="remove(todo)", color="red lighten-3", flat="", icon="")
+          v-btn(@click="remove(todo)", color="red lighten-3", text="", icon="")
             v-icon close
-    v-text-field(v-else="", v-focus="editing", :value="todo.title", @blur="doneEdit", @keyup.enter="doneEdit", @keyup.esc="cancelEdit", clearable="", color="primary", flat="", hide-details="", maxlength="1023", ref="input", solo="")
+    v-text-field(v-else="", v-focus="editing", :value="todo.title", @blur="doneEdit", @keyup.enter="doneEdit", @keyup.esc="cancelEdit", clearable="", color="primary", text="", hide-details="", maxlength="1023", ref="input", solo="")
 </template>
 
 <script>
