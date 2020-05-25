@@ -35,17 +35,20 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '@/plugins/vuetify'
+    '@/plugins/pouch'
   ],
 
   /*
   ** Nuxt.js modules
   */
   modules: [
-    'nuxt-pouch',
-    '@nuxtjs/pwa'
   ],
+  buildModules: [
+    // With options
+    ['@nuxtjs/vuetify', { /* module options */ }],
+    '@nuxtjs/pwa',
 
+  ],
   /*
   ** Build configuration
   */
@@ -68,7 +71,7 @@ module.exports = {
   },
 
   manifest: {
-    name: 'Markdown Cards',
+    name: 'Nuxt Embody',
     lang: 'de',
     share_target: {
       action: "/share-target",

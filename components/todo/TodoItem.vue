@@ -1,11 +1,11 @@
 <template lang="pug">
-  v-list-tile.todo-item(:class="{ 'editing': editing }")
-    v-list-tile-action
+  v-list-item.todo-item(:class="{ 'editing': editing }")
+    v-list-item-action
       v-checkbox(:input-value="todo.done", @change="toggle(todo)", color="primary", v-if="!editing")
       v-icon(color="primary", v-else="") edit
     template(v-if="!editing")
-      v-list-tile-content(:class="{ 'primary--text': todo.done }", @dblclick="editing = true") {{ todo.title }}
-        v-list-tile-action
+      v-list-item-content(:class="{ 'primary--text': todo.done }", @dblclick="editing = true") {{ todo.title }}
+        v-list-item-action
           v-btn(@click="remove(todo)", color="red lighten-3", flat="", icon="")
             v-icon close
     v-text-field(v-else="", v-focus="editing", :value="todo.title", @blur="doneEdit", @keyup.enter="doneEdit", @keyup.esc="cancelEdit", clearable="", color="primary", flat="", hide-details="", maxlength="1023", ref="input", solo="")

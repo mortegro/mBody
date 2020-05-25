@@ -4,8 +4,8 @@
       h1.primary--text.display-3.font-weight-medium.my-3 TODOS
       v-card
         v-list.pa-0
-          v-list-tile
-            v-list-tile-action
+          v-list-item
+            v-list-item-action
               v-checkbox(:input-value='allChecked', @change='toggleAll(!allChecked)', color='primary', v-if='todos.length > 0')
               v-icon(color='primary', v-else='') check
             v-text-field(:label="'New todo input'", @keydown.enter='addTodo', autofocus='', browser-autocomplete='off', clearable='', color='primary', flat='', hide-details='', maxlength='1023', placeholder='What needs to be done?', solo='', v-model='newTodo')

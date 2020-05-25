@@ -1,10 +1,10 @@
 <template lang="pug">
-  v-list-tile
-    v-list-tile-avatar
+  v-list-item
+    v-list-item-avatar
       img(:src="item.image")
-    v-list-tile-content
-      v-list-tile-title(v-html="item.title")
-      v-list-tile-sub-title(v-html="item.description")
+    v-list-item-content
+      v-list-item-title(v-html="item.title")
+      v-list-item-sub-title(v-html="item.description")
 </template>
 <script>
 export default {
