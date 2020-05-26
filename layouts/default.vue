@@ -7,7 +7,7 @@
             v-icon(v-html="item.icon")
           v-list-item-content
             v-list-item-title(v-text="item.title")
-    v-app-bar( flat="", fixed="")
+    v-app-bar(app="", flat="", fixed="")
       v-app-bar-nav-icon(@click="drawer = !drawer")
       v-toolbar-title(v-text="title")
       v-spacer
@@ -33,6 +33,7 @@
           { icon: 'apps', title: 'Todos', to: '/todos' },
           { icon: 'apps', title: 'Share Target', to: '/share-target' },
           { icon: 'edit', title: 'ItemEditor', to: '/itemeditor' },
+          { icon: 'edit', title: 'Konva', to: '/konvali' },
         ],
         miniVariant: false,
         title: 'EMBODY Experiment'
