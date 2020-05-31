@@ -36,7 +36,8 @@ module.exports = {
   */
   plugins: [
     '@/plugins/pouch',
-    '@/plugins/konva'
+    '@/plugins/konva',
+    '@/plugins/logger',
   ],
 
   /*

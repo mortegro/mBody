@@ -32,7 +32,7 @@
           { icon: 'apps', title: 'Todos', to: '/todos' },
           { icon: 'apps', title: 'Share Target', to: '/share-target' },
           { icon: 'edit', title: 'ItemEditor', to: '/itemeditor' },
-          { icon: 'edit', title: 'Konva', to: '/konvali' },
+          { icon: 'edit', title: 'Konva', to: '/konva' },
         ],
         miniVariant: false,
         title: 'EMBODY Experiment'

@@ -1,41 +1,38 @@
 <template lang="pug">
-  v-container.experiment(fluid="")
-    .content 
-      h3 And some other stuff
-    .actions
-      v-btn(@click="saveImage") Save
+  v-layout(column='', justify-center='', align-center='')
+    v-flex(xs12='', sm8='', md6='')
+      BodyCanvas(ref="bodyCanvas")
+    v-btn(@click="saveImage") Save
 </template>
 
 <script>
-  import Info from '@/components/elements/Info'
-  const experiment = [
-    { 
-      type: Info,
-      data: {
-        heading: "Some Heading",
-        text: "Some Info Text",
-        btnText: "Weiter"
-      } 
-    },
-    { 
-      type: Info,
-      data: {
-        heading: "Some Other Heading",
-        text: "Some Info Text",
-        btnText: "Fertig"
-      } 
-    }
-
-  ]
+  import BodyCanvas from '@/components/embody/BodyCanvas'
 
   export default {
+    components: {
+      BodyCanvas
+    },
     data() {
       return {
-        experiment,
-        step: 0
       };
-    },  
+    },
     methods: {
+      saveImage() {
+        function downloadURI(uri, name) {
+          var link = document.createElement('a');
+          link.download = name;
+          link.href = uri;
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+          // delete link;
+        }
+        console.log("clicked")
+
+        await this.$refs.bodyCanvas.output()
+        // var dataURL = image.toDataURL();
+        // downloadURI(dataURL, 'stage.png');
+      }
     },
   };
 </script>
