@@ -14,8 +14,7 @@
       v-btn(icon="")
         v-icon mdi-heart
     v-content
-      v-container(fluid="")
-        nuxt
+      nuxt
     v-footer(:fixed="fixed", app="")
       span © 2020 {{drawer}}
 </template>
