@@ -6,9 +6,7 @@
 </template>
 
 <script>
-  import Konva from 'konva'
   import BodyCanvas from '@/components/embody/BodyCanvas'
-  var image
 
   export default {
     components: {
@@ -31,7 +29,7 @@
         }
         console.log("clicked")
 
-        this.$refs.bodyCanvas.output()
+        await this.$refs.bodyCanvas.output()
         // var dataURL = image.toDataURL();
         // downloadURI(dataURL, 'stage.png');
       }
