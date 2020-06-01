@@ -1,23 +1,24 @@
 <template lang="pug">
-  v-layout(column='', justify-center='', align-center='')
-    v-flex(xs12='', sm8='', md6='')
-      BodyCanvas(ref="bodyCanvas")
-    v-btn(@click="saveImage") Save
+  v-container
+    v-layout(column='', justify-center='', align-center='')
+      v-flex(xs12='', sm8='', md6='')
+        Experiment(ref="bodyCanvas")
+      v-btn(@click="saveImage") Save
 </template>
 
 <script>
-  import BodyCanvas from '@/components/embody/BodyCanvas'
+  import Experiment from '@/components/embody/Experiment'
 
   export default {
     components: {
-      BodyCanvas
+      Experiment
     },
     data() {
       return {
       };
     },
     methods: {
-      saveImage() {
+      async saveImage() {
         function downloadURI(uri, name) {
           var link = document.createElement('a');
           link.download = name;
@@ -29,7 +30,7 @@
         }
         console.log("clicked")
 
-        await this.$refs.bodyCanvas.output()
+        // await this.$refs.bodyCanvas.output()
         // var dataURL = image.toDataURL();
         // downloadURI(dataURL, 'stage.png');
       }
