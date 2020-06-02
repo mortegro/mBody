@@ -28,11 +28,11 @@
         fixed: false,
         items: [
           { icon: 'apps', title: 'Welcome', to: '/' },
-          { icon: 'apps', title: 'Todo Example', to: '/example' },
-          { icon: 'apps', title: 'Todos', to: '/todos' },
-          { icon: 'apps', title: 'Share Target', to: '/share-target' },
-          { icon: 'edit', title: 'ItemEditor', to: '/itemeditor' },
-          { icon: 'edit', title: 'Konva', to: '/konva' },
+          { icon: 'apps', title: 'Todo Example', to: '/examples/example' },
+          { icon: 'apps', title: 'Todos', to: '/examples/todos' },
+          { icon: 'apps', title: 'Share Target', to: '/examples/share-target' },
+          { icon: 'edit', title: 'ItemEditor', to: '/examples/itemeditor' },
+          { icon: 'edit', title: 'Embody basic', to: '/experiments/embody_basic' },
         ],
         miniVariant: false,
         title: 'EMBODY Experiment'

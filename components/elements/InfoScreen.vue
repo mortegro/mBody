@@ -1,8 +1,8 @@
 <template lang="pug">
-  v-container
-    v-row
+  v-container.info-screen
+    v-row.title
       h1 {{title}}
-    v-row
+    v-row.body
       .text {{body}}
     
 </template>
@@ -21,3 +21,19 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.title {
+  border: 1px solid blue;
+}
+
+.body {
+  border: 1px solid green;
+}
+
+.info-screen {
+  border: 1px solid yellow;
+  width: 100%;
+  
+}
+</style>

@@ -1,43 +1,21 @@
 <template lang="pug">
-    v-container(fluid="")
-      component(:is="actComponent" v-bind="actData")
-      .text {{act}}
+  v-container.experiment(fluid="")
+    component(:is="actComponent" v-bind="actData")
+    .actions
       v-btn(@click="next") {{actData.btnText}}
 
 </template>
 
 <script>
 import InfoScreen from '@/components/elements/InfoScreen'
-import Questionaire from '@/components/elements/Questionaire'
-
-const experiment = {
-  id: "exp-01",
-  title: "Sample Experiment",
-  screens: [
-    {
-      type: InfoScreen,
-      data: {
-        title: "Einführung",
-        body: "Some text explaining the experiment",
-        btnText: "Next"
-      }
-    },
-    {
-      type: InfoScreen,
-      data: {
-        title: "Dank",
-        body: "Vielen Dank für Ihre Teilnahme",
-        btnText: "Finish"
-      }
-    },    
-  ]
-}
 
 export default {
+  props: {
+    experiment: Object
+  },
   data() {
     return {
       act: 0,
-      experiment,
     }
   },
   computed: {
@@ -76,8 +54,22 @@ export default {
         this.act = this.experiment.screens.length-1
       }
     }
-
   }
-
 }
 </script>
+
+<style lang="scss">
+.experiment { 
+  background-color: red;
+  display: grid;
+  grid-template-rows: 1fr 80px;
+  justify-content: center;
+  height: 100%
+}
+
+.actions {
+  background-color: green;
+  justify-content: center;
+  text-align: center;
+}
+</style>
