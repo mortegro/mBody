@@ -22,8 +22,8 @@
     data() {
       return {
         configKonva: {
-          width: 212,
-          height: 620
+          // width: 212,
+          // height: 620
         },
         bgImage: null,
         fgImage: null,
