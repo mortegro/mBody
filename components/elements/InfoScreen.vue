@@ -1,5 +1,5 @@
 <template lang="pug">
-  v-container.info-screen
+  v-container.info-screen(fluid="")
     v-row.title
       h1 {{title}}
     v-row.body

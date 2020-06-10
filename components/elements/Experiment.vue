@@ -53,6 +53,12 @@ export default {
       } else {
         this.act = this.experiment.screens.length-1
       }
+    },
+    submitScreen() {
+      console.log('Submit Screen')
+    },
+    checkExperiment() {
+      
     }
   }
 }
@@ -60,16 +66,20 @@ export default {
 
 <style lang="scss">
 .experiment { 
-  background-color: red;
+  // background-color: red;
   display: grid;
   grid-template-rows: 1fr 80px;
   justify-content: center;
-  height: 100%
+  height: 100%;
 }
 
 .actions {
-  background-color: green;
+  // background-color: green;
   justify-content: center;
   text-align: center;
+}
+
+.fullWidth {
+  width: 100%;
 }
 </style>

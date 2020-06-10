@@ -4,7 +4,7 @@
 
 <script>
 import Experiment from '~/components/elements/Experiment'
-import SimpleAffect from '~/experiments/SimpleAffectExperiment'
+import SimpleQuestionnaire from '~/experiments/SimpleQuestionnaireExperiment'
 
 export default {
   components: {
@@ -12,7 +12,7 @@ export default {
   },
   data() {
     return {
-      SimpleAffect
+      experiment: SimpleQuestionnaire
     };
   },
   methods: {
@@ -25,4 +25,3 @@ export default {
   },
 };
 </script>
-
