@@ -1,8 +1,8 @@
 <template lang="pug">
-.questionaire
-  h1 {{title}}
-  p {{description}}
-  v-container.info-screen
+v-container.questionaire(fluid="")
+  .heading {{title}}
+  .description {{description}}
+  .qform
     v-form-base(:model="model", :schema="schema", :row="{ justify: 'center', noGutters: false}", :col="12")
   p.debug {{model}}
 </template>
@@ -34,20 +34,18 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.title {
-  // border: 1px solid blue;
+<style lang="scss" >
+.qform {
+  font-size: 130%;
+  legend {
+    font-size: 130%;
+  }
 }
 
-.body {
-  // border: 1px solid green;
+.v-label {
+  font-size: 130%;
 }
 
-.info-screen {
-  // border: 1px solid yellow;
-  width: 100%;
-  
-}
 .debug {
   border: 1px dotted green;
 }

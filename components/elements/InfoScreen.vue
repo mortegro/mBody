@@ -1,9 +1,8 @@
 <template lang="pug">
   v-container.info-screen(fluid="")
-    v-row.title
-      h1 {{title}}
-    v-row.body
-      .text {{body}}
+    .heading {{title}}
+    .dcontainer
+      .description {{body}}
     
 </template>
 
@@ -23,17 +22,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.title {
-  border: 1px solid blue;
+.dcontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:100%;
+  padding: 4rem;
 }
-
-.body {
-  border: 1px solid green;
-}
-
-.info-screen {
-  border: 1px solid yellow;
-  width: 100%;
-  
-}
+// .info-screen {
+  // border: 1px solid yellow;
+  // width: 100%;
+// }
 </style>

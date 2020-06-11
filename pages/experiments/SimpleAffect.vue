@@ -12,7 +12,7 @@ export default {
   },
   data() {
     return {
-      SimpleAffect
+      experiment: SimpleAffect
     };
   },
   methods: {

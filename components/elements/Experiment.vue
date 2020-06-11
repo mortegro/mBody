@@ -2,7 +2,7 @@
   v-container.experiment(fluid="")
     component(:is="actComponent" v-bind="actData")
     .actions
-      v-btn(@click="next") {{actData.btnText}}
+      v-btn.button(@click="next") {{actData.btnText}}
 
 </template>
 
@@ -66,20 +66,36 @@ export default {
 
 <style lang="scss">
 .experiment { 
-  // background-color: red;
   display: grid;
-  grid-template-rows: 1fr 80px;
-  justify-content: center;
+  grid-template-rows: 1fr 60px;
   height: 100%;
 }
 
 .actions {
-  // background-color: green;
   justify-content: center;
+  align-items: center;
   text-align: center;
+  display: flex
+}
+
+.button {
+  max-width: 50%;
 }
 
 .fullWidth {
   width: 100%;
 }
+
+.heading {
+  font-size: 4rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.description {
+  // border: 1px solid green;
+  margin-top: 1.5rem;
+  font-size: 2rem;
+}
+
 </style>
