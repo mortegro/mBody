@@ -32,7 +32,8 @@
           { icon: 'apps', title: 'Todos', to: '/examples/todos' },
           { icon: 'apps', title: 'Share Target', to: '/examples/share-target' },
           { icon: 'edit', title: 'ItemEditor', to: '/examples/itemeditor' },
-          { icon: 'edit', title: 'Embody basic', to: '/experiments/embody_basic' },
+          { icon: 'edit', title: 'SimpleAffect', to: '/experiments/SimpleAffect' },
+          { icon: 'edit', title: 'SimpleQuestionnaire', to: '/experiments/SimpleQuestionnaire' },
         ],
         miniVariant: false,
         title: 'EMBODY Experiment'

@@ -4,7 +4,6 @@ v-container.questionaire(fluid="")
   .description {{description}}
   .qform
     v-form-base(:model="model", :schema="schema", :row="{ justify: 'center', noGutters: false}", :col="12")
-  p.debug {{model}}
 </template>
 
 <script>
@@ -46,7 +45,5 @@ export default {
   font-size: 130%;
 }
 
-.debug {
-  border: 1px dotted green;
-}
+
 </style>

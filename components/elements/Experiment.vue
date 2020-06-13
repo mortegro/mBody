@@ -1,8 +1,9 @@
 <template lang="pug">
   v-container.experiment(fluid="")
-    component(:is="actComponent" v-bind="actData")
+    component(:is="actComponent" v-bind="actDefinition" :model.sync="screenModel")
+    p.debug(v-if="debug") {{screenModel}}
     .actions
-      v-btn.button(@click="next") {{actData.btnText}}
+      v-btn.button(@click="next") {{actDefinition.btnText}}
 
 </template>
 
@@ -16,6 +17,8 @@ export default {
   data() {
     return {
       act: 0,
+      screenModel: {},
+      debug: true
     }
   },
   computed: {
@@ -32,11 +35,11 @@ export default {
     actComponent() {
       return this.actScreen.type
     },
-    actData() {
+    actDefinition() {
       return this.actScreen.data
     },
     btnText() {
-      return this.actData.btnText || "Weiter"
+      return this.actDefinition.btnText || "Weiter"
     }
   },
   methods: {
@@ -46,12 +49,22 @@ export default {
       } else {
         this.act = 0
       }
+      this.initModel()
     },
     prev() {
       if (this.act > 0) {
         this.act -=1
       } else {
         this.act = this.experiment.screens.length-1
+      }
+      this.initModel()
+
+    },
+    initModel() {
+      if (this.actDefinition.model) {
+        this.screenModel = this.actDefinition.model
+      } else {
+        this.screenModel = {}
       }
     },
     submitScreen() {
@@ -98,4 +111,7 @@ export default {
   font-size: 2rem;
 }
 
+.debug {
+  border: 1px dotted green;
+}
 </style>
