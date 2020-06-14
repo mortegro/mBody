@@ -4,7 +4,6 @@
     p.debug(v-if="debug") {{screenModel}}
     .actions
       v-btn.button(@click="next") {{actDefinition.btnText}}
-
 </template>
 
 <script>
@@ -80,8 +79,8 @@ export default {
 <style lang="scss">
 .experiment { 
   display: grid;
-  grid-template-rows: 1fr 60px;
-  height: 100%;
+  grid-template-rows: minmax(0, 1fr) 60px;
+  height: 100%
 }
 
 .actions {

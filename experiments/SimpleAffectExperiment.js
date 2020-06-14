@@ -1,27 +1,27 @@
 import InfoScreen from '@/components/elements/InfoScreen'
 import Questionaire from '@/components/elements/Questionaire'
-import BodyCanvas from '@/components/elements/embody/BodyCanvas'
+import OneBody from '@/components/elements/OneBody'
 
 
 const experiment = {
   id: "embody-prestudy",
   title: "Prestudy for embody experiment",
   screens: [
+    // {
+    //   type: InfoScreen,
+    //   id: "welcome",
+    //   data: {
+    //     title: "Einführung",
+    //     body: "Dies ist ein Beispielexperiment",
+    //     btnText: "Weiter"
+    //   }
+    // },
     {
-      type: InfoScreen,
+      type: OneBody,
       id: "welcome",
       data: {
         title: "Einführung",
-        body: "Dies ist ein Beispielexperiment",
-        btnText: "Weiter"
-      }
-    },
-    {
-      type: InfoScreen,
-      id: "welcome",
-      data: {
-        title: "Einführung",
-        body: "Dies ist ein Beispielexperiment",
+        description: "Dies ist ein Beispielexperiment",
         btnText: "Weiter"
       }
     },

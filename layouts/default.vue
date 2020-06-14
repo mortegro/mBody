@@ -1,5 +1,5 @@
 <template lang="pug">
-  v-app
+  v-app.vapp
     v-navigation-drawer(app="", :mini-variant="miniVariant", :clipped="clipped", v-model="drawer", fixed="")
       v-list
         v-list-item(v-for="(item, i) in items", :to="item.to", :key="i", router="", exact="")
@@ -13,7 +13,7 @@
       v-spacer
       v-btn(icon="")
         v-icon mdi-heart
-    v-content
+    v-content.vcontent
       nuxt
     v-footer(:fixed="fixed", app="")
       span © 2020 {{drawer}}
@@ -41,3 +41,11 @@
     }
   }
 </script>
+
+<style lang="scss" scoped>
+.vapp {
+}
+.vcontent {
+  height: 0;
+}
+</style>
