@@ -1,6 +1,6 @@
 import InfoScreen from '@/components/elements/InfoScreen'
 import Questionaire from '@/components/elements/Questionaire'
-import OneBody from '@/components/elements/OneBody'
+import TwoBody from '@/components/elements/TwoBody'
 
 
 const experiment = {
@@ -17,7 +17,7 @@ const experiment = {
     //   }
     // },
     {
-      type: OneBody,
+      type: TwoBody,
       id: "welcome",
       data: {
         title: "Einführung",

@@ -1,16 +1,16 @@
 <template lang="pug">
 .gcontainer
-  .head Head
-  .middle middle
-  .lhead lhead
+  .head {{head}}
+  .middle {{middle}}
+  .lhead {{lhead}}
   .lbody 
-    BodyCanvas
-  .lfoot lfoot
-  .rhead rhead
+    BodyCanvas(v-model="value.front")
+  .lfoot {{lfoot}}
+  .rhead {{rhead}}
   .rbody 
-    //- BodyCanvas
-  .rfoot rfoot
-  .foot foot
+    BodyCanvas(v-model="value.back")
+  .rfoot {{rfoot}}
+  .foot {{foot}}
 </template>
 
 <script>
@@ -19,6 +19,16 @@ import BodyCanvas from '@/components/elements/embody/BodyCanvas'
 export default {
   components: {
     BodyCanvas
+  },
+  props: {
+    value: {type: Object, require: false, default: {}},
+    head: { type: String, required: false },
+    middle: { type: String, required: false },
+    lhead: { type: String, required: false },
+    lfoot: { type: String, required: false },
+    rhead: { type: String, required: false },
+    rfoot: { type: String, required: false },
+    foot: { type: String, required: false },
   },
   data() {
     return {
@@ -33,7 +43,7 @@ export default {
 .gcontainer {
   display: grid;
   grid-template-columns: 3fr minmax(200px, 2fr) 3fr;
-  grid-template-rows:  20px 20px minmax(0, 1fr) 20px 20px;
+  grid-template-rows:  auto auto minmax(0, 1fr) auto auto;
   grid-template-areas:  "head head head"
                         "lhead middle rhead"
                         "lbody middle rbody"

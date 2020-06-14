@@ -3,7 +3,7 @@ v-container.questionaire(fluid="")
   .heading {{title}}
   .description {{description}}
   .qform
-    v-form-base(:model="model", :schema="schema", :row="{ justify: 'center', noGutters: false}", :col="12")
+    v-form-base(:model="value", :schema="schema", :row="{ justify: 'center', noGutters: false}", :col="12")
 </template>
 
 <script>
@@ -11,13 +11,13 @@ export default {
   props: {
     title: { type: String, required: true },
     description: { type: String, required: true },
-    model: {type: Object, require: false, default: {}},
+    value: {type: Object, require: false, default: {}},
     options: {type: Object, require: false, default: {}},
     schema: {type: Object, require: true },
   },
   data() {
     return {
-      model: this.model,
+      // model: this.model,
       schema: this.schema,
       options: this.options
     } 
@@ -26,7 +26,7 @@ export default {
     getValue() {
       return {
         completed: true,
-        data: model
+        data: this.value
       }
     }
   }
@@ -45,5 +45,7 @@ export default {
   font-size: 130%;
 }
 
-
+.questionaire {
+  overflow: scroll;
+}
 </style>

@@ -1,6 +1,6 @@
 <template lang="pug">
   v-container.experiment(fluid="")
-    component(:is="actComponent" v-bind="actDefinition" :model.sync="screenModel")
+    component(:is="actComponent" v-bind="actDefinition" v-model="screenModel")
     p.debug(v-if="debug") {{screenModel}}
     .actions
       v-btn.button(@click="next") {{actDefinition.btnText}}
@@ -17,7 +17,8 @@ export default {
     return {
       act: 0,
       screenModel: {},
-      debug: true
+      debug: true,
+      subject: null,
     }
   },
   computed: {
@@ -67,7 +68,15 @@ export default {
       }
     },
     submitScreen() {
-      console.log('Submit Screen')
+      this.$log.$debug('Submit Screen')
+      const res = {
+        experiment: this.experiment.id,
+        screen: this.actScreen.id,
+        subject: this.subject,
+        data: this.screenModel,
+        
+
+      }
     },
     checkExperiment() {
       
@@ -112,5 +121,6 @@ export default {
 
 .debug {
   border: 1px dotted green;
+  overflow: scroll;
 }
 </style>
