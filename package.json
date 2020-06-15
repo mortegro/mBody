@@ -17,6 +17,7 @@
     "konva": "^6.0.0",
     "markdown-it": "^11.0.0",
     "marked": "^1.1.0",
+    "nanoid": "^3.1.10",
     "nuxt": "^2.12.2",
     "pouchdb": "^7.2.1",
     "pouchdb-authentication": "^1.1.3",

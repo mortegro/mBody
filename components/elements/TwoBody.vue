@@ -53,49 +53,48 @@ export default {
   height: 100%;
 }
 
-
 .head {
   grid-area: head;
-  background-color: gold;
+  // background-color: gold;
 }
 
 .middle {
   grid-area: middle;
-  background-color: mediumaquamarine;
+  // background-color: mediumaquamarine;
 }
 
 .foot {
   grid-area: foot;
-  background-color: green;
+  // background-color: green;
 }
 
 .lhead {
   grid-area: lhead;
-  background-color: yellow
+  // background-color: yellow
 }
 
 .lbody {
   grid-area: lbody;
-  background-color: orange
+  // background-color: orange
 }
 
 .lfoot {
   grid-area: lfoot;
-  background-color: yellowgreen
+  // background-color: yellowgreen
 }
 
 .rhead {
   grid-area: rhead;
-  background-color: orangered
+  // background-color: orangered
 }
 
 .rbody {
   grid-area: rbody;
-  background-color: red
+  // background-color: red
 }
 
 .rfoot {
   grid-area: rfoot;
-  background-color: darkmagenta
+  // background-color: darkmagenta
 }
 </style>

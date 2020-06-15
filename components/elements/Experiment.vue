@@ -8,6 +8,7 @@
 
 <script>
 import InfoScreen from '@/components/elements/InfoScreen'
+import { nanoid } from 'nanoid'
 
 export default {
   props: {
@@ -44,6 +45,12 @@ export default {
   },
   methods: {
     next() {
+      if (!this.subject) {
+        this.subject = nanoid(8)
+        this.$log.info(`Subject: ${this.subject}`)
+        this.$log.info(`PIN:     ${this.getPIN(this.subject)}`)
+      }
+      this.submitScreen()
       if (this.act < this.experiment.screens.length-1) {
         this.act +=1
       } else {
@@ -52,6 +59,7 @@ export default {
       this.initModel()
     },
     prev() {
+      this.submitScreen()
       if (this.act > 0) {
         this.act -=1
       } else {
@@ -68,18 +76,25 @@ export default {
       }
     },
     submitScreen() {
-      this.$log.$debug('Submit Screen')
+      this.$log.debug('Submit Screen')
       const res = {
+        saved: new Date(),
         experiment: this.experiment.id,
         screen: this.actScreen.id,
         subject: this.subject,
         data: this.screenModel,
-        
-
       }
+      this.$log.debug(res)
     },
     checkExperiment() {
       
+    },
+    getPIN(str) {
+      var p = 0
+      for (var i=0, l=str.length; i<l; i++) {
+        p = p + Number(str.charCodeAt(i))
+      }
+      return (p*p).toString().slice(0,4)
     }
   }
 }

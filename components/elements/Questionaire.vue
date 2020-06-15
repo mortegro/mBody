@@ -9,17 +9,14 @@ v-container.questionaire(fluid="")
 <script>
 export default {
   props: {
+    value: {type: Object, require: false, default: {}},
     title: { type: String, required: true },
     description: { type: String, required: true },
-    value: {type: Object, require: false, default: {}},
-    options: {type: Object, require: false, default: {}},
     schema: {type: Object, require: true },
+    options: {type: Object, require: false, default: {}},
   },
   data() {
     return {
-      // model: this.model,
-      schema: this.schema,
-      options: this.options
     } 
   },
   methods: {
