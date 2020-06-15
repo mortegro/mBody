@@ -39,7 +39,7 @@ module.exports = {
     '@/plugins/konva',
     '@/plugins/logger',
     '@/plugins/forms',
-
+    '@/plugins/encrypt',
   ],
 
   /*
@@ -51,6 +51,7 @@ module.exports = {
     // With options
     ['@nuxtjs/vuetify', { /* module options */ }],
     '@nuxtjs/pwa',
+    // '@nuxtjs/dotenv',
 
   ],
   /*
@@ -65,7 +66,7 @@ module.exports = {
     runtimeCaching: [
       {
         // Should be a regex string. Compiles into new RegExp('https://my-cdn.com/.*')
-        urlPattern: 'https://jsonplaceholder.typicode.com/*',
+        urlPattern: 'https://mbody.ecsplico.de/*',
         // Defaults to `networkFirst` if omitted
         handler: 'networkFirst',
         // Defaults to `GET` if omitted
@@ -86,4 +87,11 @@ module.exports = {
       }
     },
   },
+
+  env: {
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000',
+    backend: process.env.BACKEND || 'https://backend',
+    pubkey: process.env.PUBKEY || "-----BEGIN PUBLIC KEY-----\nMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDI/9m1MbspdniIuqoqnqz7vjpf\nVnfpkqW5RdfLkhke9gxtjxPxpvdJEqjgU16L0iiTdgTDALC9V5Fv1L2G6ZGRZFCE\nyLB8jjy+ImOPeZk0oSmttws71OcVE9344O/AgPd8NtjLXVobNteRZs8sgSxugyOU\nDB/sheqMVjAwJah+iQIDAQAB\n-----END PUBLIC KEY-----"
+  }
+
 }

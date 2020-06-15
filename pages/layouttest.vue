@@ -1,16 +1,21 @@
 <template lang="pug">
 .gcontainer
   .head Head
-  .middle middle
+  .middle 
+    p backend: {{env}}
+    p baseUrl: {{base}}
+    p pubkey: {{pubkey}}
   .lhead lhead
   .lbody 
-    p lbody: {{x1}} * {{y1}}
-    resize-observer(@notify="resize1")
+    v-text-field(v-model="text", label="text")
+    v-textarea(type="textarea" v-model="pubkey" label="Public Key")
+    v-btn(@click="encrypt") encrypt
+    v-textarea(type="textarea" v-model="result" label="Result")
+    p {{result}}
   .lfoot lfoot
   .rhead rhead
   .rbody 
    p rbody: {{x2}} * {{y2}}
-   resize-observer(@notify="resize2")
 
   .rfoot rfoot
   .foot foot
@@ -20,10 +25,13 @@
 export default {
   data() {
     return {
-      x1:0,
-      y1:0,
+      text: "Test It",
+      result: '???',
       x2:0,
       y2:0,
+      env: process.env.backend,
+      base: process.env.baseUrl,
+      pubkey: process.env.pubkey.replace(/\\n/g, '\n')
     }
   },
   methods: {
@@ -34,6 +42,9 @@ export default {
     resize2 ({width, height}) {
       this.x2 = width
       this.y2 = height
+    },
+    encrypt() {
+      this.result = this.$encrypt(this.text);
     }
   }
 }

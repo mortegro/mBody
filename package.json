@@ -13,7 +13,9 @@
     "build-container": "docker build -t mortegro/nuxt-embody . --force-rm"
   },
   "dependencies": {
+    "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/pwa": "^3.0.0-beta.20",
+    "jsencrypt": "^3.0.0-rc.1",
     "konva": "^6.0.0",
     "markdown-it": "^11.0.0",
     "marked": "^1.1.0",
