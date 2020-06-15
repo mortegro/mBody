@@ -28,10 +28,6 @@
         fixed: false,
         items: [
           { icon: 'apps', title: 'Welcome', to: '/' },
-          { icon: 'apps', title: 'Todo Example', to: '/examples/example' },
-          { icon: 'apps', title: 'Todos', to: '/examples/todos' },
-          { icon: 'apps', title: 'Share Target', to: '/examples/share-target' },
-          { icon: 'edit', title: 'ItemEditor', to: '/examples/itemeditor' },
           { icon: 'edit', title: 'SimpleAffect', to: '/experiments/SimpleAffect' },
           { icon: 'edit', title: 'SimpleQuestionnaire', to: '/experiments/SimpleQuestionnaire' },
         ],
@@ -42,10 +38,19 @@
   }
 </script>
 
-<style lang="scss" scoped>
-.vapp {
+<style lang="scss">
+.exp-title {
+  display: block;
+  font-size: 2em;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  text-align: center !important;
 }
-.vcontent {
-  height: 0;
+
+.exp-description {
+  text-align: center !important;
 }
 </style>

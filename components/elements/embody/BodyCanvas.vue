@@ -79,6 +79,10 @@
       });
     },
 
+    beforeDestroy() {
+      window.removeEventListener('resize', this.fit);
+    },
+
     methods: {
       drawStart() {
         this.$log.debug('drawStart')

@@ -14,7 +14,7 @@ const experiment = {
       id: "welcome",
       data: {
         title: "Einführung",
-        body: "Dies ist ein Beispielexperiment in welchen Daten aus zwei Fragebögen gesammelt werden. \n\n\
+        description: "Dies ist ein Beispielexperiment in welchen Daten aus zwei Fragebögen gesammelt werden. \n\n\
           Bitte Fülle beide Fragebögen aus.",
         btnText: "Weiter"
       }
@@ -49,7 +49,7 @@ const experiment = {
       id: "thanx",
       data: {
         title: "Danke!",
-        body: "Vielen Dank für die Teilnahme am Experiment.",
+        description: "Vielen Dank für die Teilnahme am Experiment.",
         btnText: "Fertig"
       }
     },    

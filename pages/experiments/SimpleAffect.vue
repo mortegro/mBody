@@ -7,6 +7,7 @@ import Experiment from '~/components/elements/Experiment'
 import SimpleAffect from '~/experiments/SimpleAffectExperiment'
 
 export default {
+  middleware: ['enforce-subject'],
   components: {
     Experiment
   },

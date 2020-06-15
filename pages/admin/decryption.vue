@@ -2,20 +2,24 @@
 v-container(fluid="")
   v-row
     v-col(cols=6)
-      v-textarea(type="textarea" v-model="pubkey" label="Public Key")
+      v-card
+        v-textarea(type="textarea" v-model="pubkey" label="Public Key")
     v-col(cols=6)
-      v-textarea(type="textarea" v-model="privkey" label="Private Key")
+      v-card
+        v-textarea(type="textarea" v-model="privkey" label="Private Key")
+  v-row
+    v-col(cols=8,)
+      v-card
+        v-textarea(type="textarea" v-model="text" label="Input")
+    v-col(cols=4,  :align="center", :justify="middle")
+        v-btn.my-2(@click="encrypt") encrypt
+        v-btn.my-2(@click="decrypt") decrypt
+        v-btn.my-2(@click="clear") clear
+        v-btn.my-2(@click="r2i") result->input
   v-row
     v-col(cols=8)
-      v-textarea(type="textarea" v-model="text" label="Input")
-    v-col(cols=4)
-      v-btn(@click="encrypt") encrypt
-      v-btn(@click="decrypt") decrypt
-      v-btn(@click="clear") clear
-      v-btn(@click="r2i") result->input
-  v-row
-    v-col(cols=8)
-      v-textarea(type="textarea" v-model="result" label="Result")
+      v-card
+        v-textarea(type="textarea" v-model="result" label="Result")
 </template>
 
 <script>
@@ -52,7 +56,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.v-btn {
-  margin: 5px;
-}
 </style>

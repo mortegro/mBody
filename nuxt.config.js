@@ -40,6 +40,7 @@ module.exports = {
     '@/plugins/logger',
     '@/plugins/forms',
     '@/plugins/encrypt',
+    '@/plugins/subjectid',
   ],
 
   /*

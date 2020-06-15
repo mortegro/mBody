@@ -1,11 +1,15 @@
 <template lang="pug">
 .gcontainer
-  .head {{head}}
-  .right {{right}}
+  .head {{title}}
+  .middle {{description}}
   .lhead {{lhead}}
   .lbody 
-    BodyCanvas(v-model="value")
+    BodyCanvas(v-model="value.front")
   .lfoot {{lfoot}}
+  .rhead {{rhead}}
+  .rbody 
+    BodyCanvas(v-model="value.back")
+  .rfoot {{rfoot}}
   .foot {{foot}}
 </template>
 
@@ -13,16 +17,18 @@
 import BodyCanvas from '@/components/elements/embody/BodyCanvas'
 
 export default {
-   props: {
-    value: {type: Object, require: false, default: {}},
-    head: { type: String, required: false },
-    right: { type: String, required: false },
-    lhead: { type: String, required: false },
-    lfoot: { type: String, required: false },
-    foot: { type: String, required: false },
-  },
   components: {
     BodyCanvas
+  },
+  props: {
+    value: {type: Object, require: false, default: {}},
+    title: { type: String, required: false },
+    description: { type: String, required: false },
+    lhead: { type: String, required: false, default: "aktivere Regionen" },
+    lfoot: { type: String, required: false },
+    rhead: { type: String, required: false, default: "deaktivere Regionen" },
+    rfoot: { type: String, required: false },
+    foot: { type: String, required: false },
   },
   data() {
     return {
@@ -36,17 +42,16 @@ export default {
 <style lang="scss" scoped>
 .gcontainer {
   display: grid;
-  grid-template-columns: 1fr minmax(200px, 1fr);
-  grid-template-rows:  20px 20px minmax(0, 1fr) 20px 20px;
-  grid-template-areas:  "head head "
-                        "lhead middle"
-                        "lbody middle"
-                        "lfoot middle"
-                        "foot foot";
+  grid-template-columns: 3fr minmax(200px, 2fr) 3fr;
+  grid-template-rows:  auto auto minmax(0, 1fr) auto auto;
+  grid-template-areas:  "head head head"
+                        "lhead middle rhead"
+                        "lbody middle rbody"
+                        "lfoot middle rfoot"
+                        "foot foot foot";
   padding: 10px;
   height: 100%;
 }
-
 
 .head {
   grid-area: head;

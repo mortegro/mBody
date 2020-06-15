@@ -1,7 +1,7 @@
 <template lang="pug">
 v-container.questionaire(fluid="")
-  .heading {{title}}
-  .description {{description}}
+  .exp-title {{title}}
+  .exp-description {{description}}
   .qform
     v-form-base(:model="value", :schema="schema", :row="{ justify: 'center', noGutters: false}", :col="12")
 </template>
@@ -31,16 +31,16 @@ export default {
 </script>
 
 <style lang="scss" >
-.qform {
-  font-size: 130%;
-  legend {
-    font-size: 130%;
-  }
-}
+// .qform {
+//   font-size: 130%;
+//   legend {
+//     font-size: 130%;
+//   }
+// }
 
-.v-label {
-  font-size: 130%;
-}
+// .v-label {
+//   font-size: 130%;
+// }
 
 .questionaire {
   overflow: scroll;

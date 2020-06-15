@@ -1,6 +1,6 @@
 import InfoScreen from '@/components/elements/InfoScreen'
 import Questionaire from '@/components/elements/Questionaire'
-import TwoBody from '@/components/elements/TwoBody'
+import BodyFrontBack from '@/components/elements/BodyFrontBack'
 
 
 const experiment = {
@@ -17,7 +17,7 @@ const experiment = {
     //   }
     // },
     {
-      type: TwoBody,
+      type: BodyFrontBack,
       id: "welcome",
       data: {
         title: "Einführung",
@@ -30,7 +30,7 @@ const experiment = {
       id: "thanx",
       data: {
         title: "Danke!",
-        body: "Vielen Dank für die Teilnahme am Experiment.",
+        description: "Vielen Dank für die Teilnahme am Experiment.",
         btnText: "Fertig"
       }
     },    
