@@ -13,7 +13,8 @@ import InfoScreen from '@/components/elements/InfoScreen'
 
 export default {
   props: {
-    experiment: Object,
+    experiment: {type: Object, required: true},
+    meta: Object
   },
   data() {
     return {
@@ -42,6 +43,9 @@ export default {
     },
     btnText() {
       return this.actDefinition.btnText || "Weiter"
+    },
+    collection() {
+      return this.experiment.collection || 'mbody_data'
     }
   },
   methods: {
@@ -70,14 +74,15 @@ export default {
     },
     saveScreen() {
       const res = {
-        experiment: this.experiment.id,
-        screen: this.actScreen.id,
-        subject: this.subject.id,
+        expId: this.experiment.id,
+        screenId: this.actScreen.id,
+        subjectId: this.subject.id,
         saved: new Date(),
         data: this.screenModel,
+        meta: this.meta
       }
       this.$log.debug(' SAVE TO DATABASE: ', res)
-      alert(' TO DB: '+JSON.stringify(res))
+      this.$emit('store',res)
     },
     checkExperiment() {
       

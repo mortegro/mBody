@@ -1,13 +1,16 @@
 import InfoScreen from '@/components/elements/InfoScreen'
 import Questionaire from '@/components/elements/Questionaire'
-import BodyCanvas from '@/components/elements/embody/BodyCanvas'
 import BaseQuestionnaire from '~/experiments/questionnaires/BaseQuestionnaire'
 import StudyExpQuestionnaire from '~/experiments/questionnaires/StudyExpQuestionnaire'
 
 
 const experiment = {
   id: "embody-prestudy",
-  title: "Prestudy for embody experiment",
+  title: "mBody Interview",
+  description: "Beispielfragebogen",
+  storehook(res) {
+    alert(' TO DB: '+JSON.stringify(res))
+  },
   screens: [
     {
       type: InfoScreen,

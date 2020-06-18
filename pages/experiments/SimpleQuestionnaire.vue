@@ -3,13 +3,9 @@
 </template>
 
 <script>
-import Experiment from '~/components/elements/Experiment'
 import SimpleQuestionnaire from '~/experiments/SimpleQuestionnaireExperiment'
 
 export default {
-  components: {
-    Experiment
-  },
   data() {
     return {
       experiment: SimpleQuestionnaire

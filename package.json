@@ -1,7 +1,7 @@
 {
-  "name": "nuxt-embody",
+  "name": "mbody",
   "version": "1.0.0",
-  "description": "Embody Experiment",
+  "description": "Embody Experiment Platform",
   "author": "Matthias Bolz",
   "private": true,
   "scripts": {
@@ -10,9 +10,11 @@
     "start": "nuxt start",
     "production": "HOST=0.0.0.0 PORT=80 nuxt start",
     "generate": "nuxt generate",
-    "build-container": "docker build -t mortegro/nuxt-embody . --force-rm"
+    "build-container": "docker build -t mortegro/mbody . --force-rm"
   },
   "dependencies": {
+  },
+  "devDependencies": {
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/pwa": "^3.0.0-beta.20",
     "jsencrypt": "^3.0.0-rc.1",
@@ -32,9 +34,7 @@
     "vue-konva": "^2.1.3",
     "vue-pouch": "0.0.23",
     "vuejs-logger": "^1.5.4",
-    "vuetify-form-base": "^0.1.21"
-  },
-  "devDependencies": {
+    "vuetify-form-base": "^0.1.21",
     "@nuxtjs/vuetify": "^1.11.2"
   }
 }

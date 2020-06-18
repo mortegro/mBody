@@ -1,31 +1,27 @@
 <template lang="pug">
-  v-layout(column='', justify-center='', align-center='')
-    v-flex(xs12='', sm8='', md6='')
-      .text-xs-center
-        logo
-          vuetify-logo
-      v-card
-        v-card-title.headline Welcome to the Vuetify + Nuxt.js + pouch Template
-        v-card-text
-          p Vuetify is a progressive Material Design component framework for Vue.js. It was designed to empower developers to create amazing applications.
-          p Pouch.db is a in-browser database with the ability to sync to a couchdb instance.
-          p Thank you for developing with Vuetify and I look forward to bringing more exciting features in the future.
-          hr.my-3
-        v-card-actions
-          v-spacer
-            v-btn(color='primary', text='', nuxt='', to='/example') Simplest pouch Example
-            v-btn(color='primary', text='', nuxt='', to='/example') Todo Example
+  v-container(fluid='')
+    v-row(dense='')
+      v-col(v-for='e in fp_experiments', :key='e.exp.id', :cols='e.flex')
+        v-card.mx-auto
+          v-card-text 
+            h2.text--primary {{e.exp.title}}
+            .text--primary {{e.exp.description}}
+          v-card-actions
+            v-btn(text='', color="primary") starten
+              
 
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-import VuetifyLogo from '~/components/VuetifyLogo.vue'
-
+import { experiments } from '~/configuration'
 export default {
-  components: {
-    Logo,
-    VuetifyLogo
-  }
+  data() {
+    return {
+      experiments: experiments.filter(e=>e.frontpage)
+    }
+  },
+  computed: {
+  },
+
 }
 </script>

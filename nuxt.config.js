@@ -41,6 +41,7 @@ module.exports = {
     '@/plugins/forms',
     '@/plugins/encrypt',
     '@/plugins/subjectid',
+    '@/plugins/global-components',
   ],
 
   /*

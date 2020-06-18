@@ -11,14 +11,15 @@ export const schema = {
   },  
   email: { 
     label: 'eMail-Adresse',
-    type: 'text',
+    type: 'email',
     col: 6
   },
   dob: {
-    label: 'Geburtsdatum',
-    type: 'text',
-    ext: 'date',
-    locale: 'de',
+    type:'text', 
+    ext:'date', 
+    locale:'en',
+    prependIcon: 'event', 
+    label:'geburtsdatum',
     col: 6
   },
   gender: { 

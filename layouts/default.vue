@@ -32,7 +32,7 @@
           { icon: 'edit', title: 'SimpleQuestionnaire', to: '/experiments/SimpleQuestionnaire' },
         ],
         miniVariant: false,
-        title: 'EMBODY Experiment'
+        title: 'mBODY Experimente'
       }
     }
   }

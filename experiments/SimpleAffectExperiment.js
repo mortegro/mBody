@@ -5,7 +5,10 @@ import BodyFrontBack from '@/components/elements/BodyFrontBack'
 
 const experiment = {
   id: "embody-prestudy",
-  title: "Prestudy for embody experiment",
+  title: "Affect Representation A",
+  description: "Körperliche Aktivierungs- und Deaktivierunsmuster im Rahmen des Emotionserlebens (Erwachsenenversion)",
+  menu: true,
+  frontpage: true,
   screens: [
     // {
     //   type: InfoScreen,
