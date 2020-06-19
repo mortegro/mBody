@@ -6,7 +6,6 @@
       v-tabs(fixed-tabs, background-color='green', v-model='tab')
         v-tab(key="newParticipant") Neu anlegen
         v-tab(key="checkParticipant") Vorhandenen nutzen
-        v-tab(key="anonym") Anonym fortfahren
         
         v-tab-item(key="newParticipant")
           .qform(v-if="!created")
@@ -27,14 +26,9 @@
             v-text-field(v-model="input_id", label="Teilnehmer ID")
             v-text-field(v-model="input_pin", label="PIN")
             .text-center
-              v-btn(@click="checkParticipant", color="primary") Fortfahren 
+              v-btn(@click="checkParticipant", color="primary") Überprüfen und Fortfahren 
             v-alert(v-if="errorMessage", type="error") {{errorMessage}}
         
-        v-tab-item(key="anonym")
-          h3.ma-4.text-center Anonym fortfahren
-          .text-center
-            v-btn(@click="proceed", color="primary") Fortfahren
-   
 </template>
 
 <script>
@@ -43,7 +37,6 @@ export default {
   data() {
     return {
       tab: null,
-      next: this.$route.query.next,
       value: {},
       schema: ParticipantQuestionnaire,
       created: false,
@@ -58,6 +51,7 @@ export default {
       const part = { ...this.value, subject: this.subject.id}
       this.$log.debug(' SAVE TO DATABASE: ', part)
       alert(' TO DB: '+JSON.stringify(part))
+      this.$emit('change-subject', this.subject)
       this.created = true
     },
 
@@ -73,10 +67,7 @@ export default {
     },
 
     proceed() {
-      if (this.next) {
-        this.$log.debug(this.subject.id)
-        this.$router.push({ name: this.next, params: { subject: this.subject.id }})
-      }
+      this.$emit('completed')
     }
 
   }

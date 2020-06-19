@@ -2,11 +2,11 @@
 .gcontainer
   .head {{title}}
   .right 
-    .exp-title {{exp-title}}
+    .exp-title {{title}}
     .exp-description {{description}}
   .lhead {{lhead}}
   .lbody 
-    BodyCanvas(v-model="value")
+    BodyCanvas(v-model="value.body")
   .lfoot {{lfoot}}
   .foot {{foot}}
 </template>

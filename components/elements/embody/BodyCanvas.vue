@@ -3,7 +3,7 @@
     v-stage.stage-container(:config='configKonva', ref="stage", @mousedown="drawStart", @touchstart="drawStart", @mouseup="drawStop", @touchend="drawStop", @mouseout="drawStop", @mousemove="draw", @touchmove="draw",)
       v-layer(ref="background")
         v-image(:config="{image: bgImage}")
-      v-layer(ref="drawing")
+      v-layer(ref="drawing", :config="{opacity: 0.8}")
       v-layer(ref="mask")
         v-image(:config="{image: fgImage}")
 </template>

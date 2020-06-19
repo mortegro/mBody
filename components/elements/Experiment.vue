@@ -2,7 +2,7 @@
   v-container.experiment(fluid="")
     .subjinfo SubjectID: {{subject.id}}, PIN: {{subject.pin}}
     v-row
-      component(:is="actComponent" v-bind="actDefinition" v-model="screenModel")
+      component(:is="actComponent", v-bind="actDefinition", v-model="screenModel", v-on:change-subject="changeSubject", v-on:completed="next")
     p.debug(v-if="debug") {{screenModel}}
     .actions
       v-btn.button(@click="next") {{actDefinition.btnText}}
@@ -25,6 +25,7 @@ export default {
     }
   },
   computed: {
+    // active screen
     actScreen() {
       return this.experiment.screens[this.act] || {
         type: InfoScreen,
@@ -35,20 +36,25 @@ export default {
         }
       }
     },
+    // active component for this screen
     actComponent() {
       return this.actScreen.type
     },
+    // active definition for the component
     actDefinition() {
       return this.actScreen.data
     },
+    // button text
     btnText() {
       return this.actDefinition.btnText || "Weiter"
     },
+    // collection for saving the data
     collection() {
       return this.experiment.collection || 'mbody_data'
     }
   },
   methods: {
+    // transition to next screen
     next() {
       this.saveScreen()
       if (this.act < this.experiment.screens.length-1) {
@@ -58,6 +64,7 @@ export default {
       }
       this.initModel()
     },
+    // transition to previous screen
     prev() {
       this.saveScreen()
       if (this.act > 0) {
@@ -65,14 +72,16 @@ export default {
       } 
       this.initModel()
     },
+    // initialize and clear the screen data
     initModel() {
-      if (this.actDefinition.model) {
-        this.screenModel = this.actDefinition.model
-      } else {
-        this.screenModel = {}
-      }
+      this.screenModel = this.actDefinition.model || {}
     },
     saveScreen() {
+      // If a screen gives back a subject, set it as experiment subject
+      if (this.screenModel && this.screenModel.subject) {
+        this.subject = this.screenModel.subject
+      }
+      // collect result
       const res = {
         expId: this.experiment.id,
         screenId: this.actScreen.id,
@@ -81,20 +90,22 @@ export default {
         data: this.screenModel,
         meta: this.meta
       }
+      // save it to database
       this.$log.debug(' SAVE TO DATABASE: ', res)
+      
+      // emit result
       this.$emit('store',res)
     },
+    changeSubject(subj) {
+      this.subject = subj
+    },
     checkExperiment() {
-      
+      // check if ervery screen has an id
+
+      // check if ids are unique
+
     },
   },
-  mounted() {
-    if (this.$route.params.subject) {
-      const subj = this.$route.params.subject
-      this.$log.debug("Got Subject: ",this.$route.params.subject)
-      this.subject = { id: subj, pin: this.$getPin(subj)}
-    }
-  }
 }
 </script>
 

@@ -1,15 +1,17 @@
 <template lang="pug">
 .gcontainer
-  .head {{title}}
-  .middle {{description}}
-  .lhead {{lhead}}
+  .head.text-center 
+  .middle
+    .exp-title {{title}}
+    .exp-description {{description}}
+  .lhead.text-center {{lhead}}
   .lbody 
-    BodyCanvas(v-model="value.front")
-  .lfoot {{lfoot}}
-  .rhead {{rhead}}
+    BodyCanvas(v-model="value.front", strokeStyle="#EF9A9A")
+  .lfoot.text-center {{lfoot}}
+  .rhead.text-center {{rhead}}
   .rbody 
-    BodyCanvas(v-model="value.back")
-  .rfoot {{rfoot}}
+    BodyCanvas(v-model="value.back", strokeStyle="#90CAF9")
+  .rfoot.text-center {{rfoot}}
   .foot {{foot}}
 </template>
 

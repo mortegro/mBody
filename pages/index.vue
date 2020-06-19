@@ -1,13 +1,13 @@
 <template lang="pug">
   v-container(fluid='')
     v-row(dense='')
-      v-col(v-for='e in fp_experiments', :key='e.exp.id', :cols='e.flex')
+      v-col(v-for='(e,idx) in experiments', :key='idx', :cols='e.flex')
         v-card.mx-auto
           v-card-text 
-            h2.text--primary {{e.exp.title}}
-            .text--primary {{e.exp.description}}
+            h2.text--primary {{e.title}}
+            .text--primary {{e.description}}
           v-card-actions
-            v-btn(text='', color="primary") starten
+            v-btn(text='', color="primary", :to="'/experiments/'+e.expId", nuxt) starten
               
 
 </template>

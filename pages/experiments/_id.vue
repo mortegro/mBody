@@ -31,7 +31,7 @@ export default {
   },
   methods: {
     async storehook(data) {
-      if (this.experiment & this.experiment.storehook & typeof this.experiment.storehook == 'function') {
+      if (this.experiment && this.experiment.storehook && typeof this.experiment.storehook == 'function') {
         await experiment.storehook(data)
       }
     }
