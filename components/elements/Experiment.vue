@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import InfoScreen from '@/components/elements/InfoScreen'
+import InfoScreen from '@/components/elements/screens/InfoScreen'
 
 export default {
   props: {
@@ -101,8 +101,8 @@ export default {
 <style lang="scss" scoped>
 .experiment { 
   display: grid;
-  grid-template-rows: auto minmax(0, 1fr) 60px;
-  height: 100%
+  grid-template-rows: 1.2rem minmax(0, 1fr) 60px;
+  height: 100%;
 }
 
 .subjinfo {
@@ -124,18 +124,6 @@ export default {
 
 .fullWidth {
   width: 100%;
-}
-
-.heading {
-  font-size: 4rem;
-  font-weight: 700;
-  text-align: center;
-}
-
-.description {
-  // border: 1px solid green;
-  margin-top: 1.5rem;
-  font-size: 2rem;
 }
 
 .debug {

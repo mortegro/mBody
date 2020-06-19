@@ -74,7 +74,7 @@ export default {
 
     proceed() {
       if (this.next) {
-        console.log(this.subject.id)
+        this.$log.debug(this.subject.id)
         this.$router.push({ name: this.next, params: { subject: this.subject.id }})
       }
     }

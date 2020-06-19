@@ -1,5 +1,5 @@
-import InfoScreen from '@/components/elements/InfoScreen'
-import Questionaire from '@/components/elements/Questionaire'
+import InfoScreen from '@/components/elements/screens/InfoScreen'
+import Questionaire from '@/components/elements/screens/Questionaire'
 import BaseQuestionnaire from '~/experiments/questionnaires/BaseQuestionnaire'
 import StudyExpQuestionnaire from '~/experiments/questionnaires/StudyExpQuestionnaire'
 

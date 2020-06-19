@@ -53,4 +53,7 @@
 .exp-description {
   text-align: center !important;
 }
+.vcontent {
+  height: 0;
+}
 </style>

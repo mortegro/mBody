@@ -1,8 +1,7 @@
 <template lang="pug">
-  .exp-page
-    Experiment(v-if="expId", ref="experiment", :experiment="experiment" :meta="meta" @store="storehook")
-    .jcenter.container(v-else, fluid="")
-      h1.text-center No experiment id given or experiment not found.
+  Experiment(v-if="expId", ref="experiment", :experiment="experiment" :meta="meta" @store="storehook")
+  //- .jcenter.container(v-else, fluid="")
+  //-     h1.text-center No experiment id given or experiment not found.
 </template>
 
 <script>
@@ -16,13 +15,13 @@ export default {
   computed: {
     expId() {
       const expId = this.$route.params.id
-      this.$log.debug(`expID: ${expId}`)
+      // this.$log.debug(`expID: ${expId}`)
       return expId
     },
     experiment() {
-      this.$log.debug(`expID: ${this.expId}`)
+      // this.$log.debug(`expID: ${this.expId}`)
       const exp = experiments[this.expId]
-      this.$log.debug(`exp: ${JSON.stringify(exp)}`)
+      // this.$log.debug(`exp: ${JSON.stringify(exp)}`)
       return exp
     },
     meta() {
@@ -32,7 +31,7 @@ export default {
   },
   methods: {
     async storehook(data) {
-      if (experiment & experiment.storehook & typeof experiment.storehook == 'function') {
+      if (this.experiment & this.experiment.storehook & typeof this.experiment.storehook == 'function') {
         await experiment.storehook(data)
       }
     }

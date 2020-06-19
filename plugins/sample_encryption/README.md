@@ -1,8 +1,8 @@
 # Simple Encryption
-## Use
+## Usage
 - Set PUBKEY as Environment variable
 - use this.$encrypt("test") to encrypt text with this key
-
+- use this.$decrypt("...", privateKey) to decrypt text with this key
 
 
 ## Generate Keys

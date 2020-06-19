@@ -1,6 +1,6 @@
-import InfoScreen from '@/components/elements/InfoScreen'
-import Questionaire from '@/components/elements/Questionaire'
-import BodyFrontBack from '@/components/elements/BodyFrontBack'
+import InfoScreen from '@/components/elements/screens/InfoScreen'
+import Questionaire from '@/components/elements/screens/Questionaire'
+import BodyFrontBack from '@/components/elements/screens/BodyFrontBack'
 
 
 const experiment = {

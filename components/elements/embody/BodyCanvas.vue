@@ -144,7 +144,7 @@
 .stage-parent {
   // background: grey;
   // border: 1px solid gold;
-  // overflow: hidden;
+  overflow: hidden;
   height: 100%;
 }
 
