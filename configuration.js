@@ -1,26 +1,27 @@
 export const experiments = [
-  { title: 'Simple Affect',
+  { 
+    title: 'Simple Affect',
     description: 'Einführungsexperiment für affektive Paradigmen.',
     frontpage: true,
-    menu: false,
+    menu: true,
     expId: 'simpleAffect',
     meta: { group:"test"},
-    flex: 4 
   },
-  { title: 'Simple Questionaire',
+  { 
+    title: 'Simple Questionaire',
     description: 'Einführungsexperiment für affektive Paradigmen.',
     frontpage: true,
-    menu: false,
+    menu: true,
     expId: 'simpleQuestionnaire', 
     meta: { group:"test"},
-    flex: 4 
   },  
-  { title: 'mBody Demo',
-  description: 'Demo of mBody screens and options',
-  frontpage: true,
-  menu: false,
-  expId: 'mBodyDemo', 
-  meta: { group:"test"},
-  flex: 4 
-},
+  { 
+    title: 'mBody Demo',
+    description: 'Demo of mBody screens and options',
+    frontpage: true,
+    menu: true,
+    icon: 'extension',
+    expId: 'mBodyDemo', 
+    meta: { group:"test"},
+  },
 ]

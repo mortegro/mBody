@@ -20,22 +20,40 @@
 </template>
 
 <script>
-  export default {
-    data() {
-      return {
-        clipped: false,
-        drawer: false,
-        fixed: false,
-        items: [
-          { icon: 'apps', title: 'Welcome', to: '/' },
-          { icon: 'edit', title: 'SimpleAffect', to: '/experiments/SimpleAffect' },
-          { icon: 'edit', title: 'SimpleQuestionnaire', to: '/experiments/SimpleQuestionnaire' },
-        ],
-        miniVariant: false,
-        title: 'mBODY Experimente'
-      }
+import { experiments } from '~/configuration'
+
+export default {
+  data() {
+    return {
+      clipped: false,
+      drawer: false,
+      fixed: false,
+      miniVariant: false,
+      title: 'mBODY Experimente'
+    }
+  },
+  computed: {
+    experiments() {
+      const exp = experiments
+        .filter(e => e.menu)
+        .map(e => {
+          return {
+            icon: e.icon || 'add_to_queue',
+            title: e.title,
+            to: '/experiments/' + e.expId
+          }
+        })
+      this.$log.debug(exp)
+      return exp
+    },
+    items() {
+      return [
+        { icon: 'apps', title: 'Homepage', to: '/' },
+        ...this.experiments
+      ]
     }
   }
+}
 </script>
 
 <style lang="scss">

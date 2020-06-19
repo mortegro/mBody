@@ -1,13 +1,13 @@
 <template lang="pug">
   v-container(fluid='')
     v-row(dense='')
-      v-col(v-for='(e,idx) in experiments', :key='idx', :cols='e.flex')
+      v-col(v-for='(e,idx) in experiments', :key='idx')
         v-card.mx-auto
-          v-card-text 
-            h2.text--primary {{e.title}}
+          v-card-title.justify-center {{e.title}}
+          v-card-text.cardheight
             .text--primary {{e.description}}
-          v-card-actions
-            v-btn(text='', color="primary", :to="'/experiments/'+e.expId", nuxt) starten
+          v-card-actions.justify-center
+            v-btn.text-center(text='', color="primary", :to="'/experiments/'+e.expId", nuxt) starten
               
 
 </template>
@@ -25,3 +25,10 @@ export default {
 
 }
 </script>
+
+<style lang="scss" scoped>
+.cardheight {
+  overflow-y: auto;
+  height: 8rem;
+}
+</style>

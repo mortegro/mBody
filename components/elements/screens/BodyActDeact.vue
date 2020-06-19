@@ -6,11 +6,11 @@
     .exp-description {{description}}
   .lhead.text-center {{lhead}}
   .lbody 
-    BodyCanvas(v-model="value.front", strokeStyle="#EF9A9A")
+    BodyCanvas(v-model="value.front", strokeStyle="EF5350")
   .lfoot.text-center {{lfoot}}
   .rhead.text-center {{rhead}}
   .rbody 
-    BodyCanvas(v-model="value.back", strokeStyle="#90CAF9")
+    BodyCanvas(v-model="value.back", strokeStyle="#5C6BC0")
   .rfoot.text-center {{rfoot}}
   .foot {{foot}}
 </template>
@@ -26,9 +26,9 @@ export default {
     value: {type: Object, require: false, default: {}},
     title: { type: String, required: false },
     description: { type: String, required: false },
-    lhead: { type: String, required: false, default: "aktivere Regionen" },
+    lhead: { type: String, required: false, default: "aktive Regionen" },
     lfoot: { type: String, required: false },
-    rhead: { type: String, required: false, default: "deaktivere Regionen" },
+    rhead: { type: String, required: false, default: "deaktive Regionen" },
     rfoot: { type: String, required: false },
     foot: { type: String, required: false },
   },

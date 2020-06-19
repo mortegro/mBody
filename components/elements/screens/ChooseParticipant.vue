@@ -2,10 +2,10 @@
   v-container(fluid="")
     h1.text-center Teilnehmer festlegen
     .description.text-center Sie können sich als neuen Teilnehmer registrieren, alte Zugangsdaten nutzen oder anonym fortfahren.
-    v-container(pa-4, fluid="")
-      v-tabs(fixed-tabs, background-color='green', v-model='tab')
-        v-tab(key="newParticipant") Neu anlegen
+    v-container.part-container(fluid="")
+      v-tabs(fixed-tabs, background-color='primary', v-model='tab')
         v-tab(key="checkParticipant") Vorhandenen nutzen
+        v-tab(key="newParticipant") Neu anlegen
         
         v-tab-item(key="newParticipant")
           .qform(v-if="!created")
@@ -19,14 +19,14 @@
               br
               p Ihre Teilnehmer-ID lautet: {{ subject.id }}
               p Ihre PIN für spätere Teilnahmen lautet: {{ subject.pin }}
-              v-btn(@click="proceed", color="primary") Fortfahren
+              v-btn(@click="proceed", color="success") Fortfahren
 
         v-tab-item(key="checkParticipant")
           v-container
             v-text-field(v-model="input_id", label="Teilnehmer ID")
             v-text-field(v-model="input_pin", label="PIN")
             .text-center
-              v-btn(@click="checkParticipant", color="primary") Überprüfen und Fortfahren 
+              v-btn(@click="checkParticipant", color="success") Überprüfen und Fortfahren 
             v-alert(v-if="errorMessage", type="error") {{errorMessage}}
         
 </template>
@@ -73,3 +73,9 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.part-container {
+  padding: 4rem;
+}
+</style>

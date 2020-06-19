@@ -16,7 +16,7 @@
       bgImageUrl: {type: String, default: '/vorlagen/silhouette.png' },
       fgImageUrl: {type: String, default: '/vorlagen/mask.png'},
       strokeWidth: { type: Number, default: 24 },
-      strokeStyle: { type: String, default: '#df4b26'},
+      strokeStyle: { type: String, default: '#EF5350'},
       imgWidth: { type: Number, default: 480},
       imgHeight: {type: Number, default: 1280},
       value: { type: String }
