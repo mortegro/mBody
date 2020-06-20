@@ -13,14 +13,14 @@
     "build-container": "docker build -t mortegro/mbody . --force-rm"
   },
   "dependencies": {
+    "@nuxtjs/markdownit": "^1.2.9"
   },
   "devDependencies": {
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/pwa": "^3.0.0-beta.20",
+    "@nuxtjs/vuetify": "^1.11.2",
     "jsencrypt": "^3.0.0-rc.1",
     "konva": "^6.0.0",
-    "markdown-it": "^11.0.0",
-    "marked": "^1.1.0",
     "nanoid": "^3.1.10",
     "nuxt": "^2.12.2",
     "pouchdb": "^7.2.1",
@@ -34,7 +34,6 @@
     "vue-konva": "^2.1.3",
     "vue-pouch": "0.0.23",
     "vuejs-logger": "^1.5.4",
-    "vuetify-form-base": "^0.1.21",
-    "@nuxtjs/vuetify": "^1.11.2"
+    "vuetify-form-base": "^0.1.21"
   }
 }

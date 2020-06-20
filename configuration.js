@@ -1,10 +1,19 @@
 export const experiments = [
   { 
+    title: 'HelloHeart',
+    description: 'First demo experiment',
+    frontpage: true,
+    menu: true,
+    icon: 'extension',
+    expId: 'HelloHeart', 
+    meta: { group:"test"},
+  },
+  { 
     title: 'Simple Affect',
     description: 'Einführungsexperiment für affektive Paradigmen.',
     frontpage: true,
     menu: true,
-    expId: 'simpleAffect',
+    expId: 'SimpleAffect',
     meta: { group:"test"},
   },
   { 
@@ -12,16 +21,26 @@ export const experiments = [
     description: 'Einführungsexperiment für affektive Paradigmen.',
     frontpage: true,
     menu: true,
-    expId: 'simpleQuestionnaire', 
+    expId: 'SimpleQuestionnaire', 
     meta: { group:"test"},
   },  
   { 
-    title: 'mBody Demo',
+    title: 'MBodyDemo',
     description: 'Demo of mBody screens and options',
     frontpage: true,
     menu: true,
     icon: 'extension',
-    expId: 'mBodyDemo', 
+    expId: 'MBodyDemo', 
     meta: { group:"test"},
   },
+  { 
+    title: 'BodyParts',
+    description: 'Demo of mBody screens and options',
+    frontpage: true,
+    menu: true,
+    icon: 'extension',
+    expId: 'BodyParts', 
+    meta: { group:"test"},
+  },
+
 ]

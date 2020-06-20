@@ -19,8 +19,9 @@ export default {
       return expId
     },
     experiment() {
-      // this.$log.debug(`expID: ${this.expId}`)
-      const exp = experiments[this.expId]
+      this.$log.debug(`expID: ${this.expId}`)
+      const ExperimentClass = experiments[this.expId]
+      const exp = new ExperimentClass(this.$route.query || {})
       // this.$log.debug(`exp: ${JSON.stringify(exp)}`)
       return exp
     },

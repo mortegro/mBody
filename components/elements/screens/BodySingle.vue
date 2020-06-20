@@ -1,14 +1,14 @@
 <template lang="pug">
 .gcontainer
-  .head {{title}}
-  .right 
-    .exp-title {{title}}
-    .exp-description {{description}}
-  .lhead {{lhead}}
+  .head {{$md.render(head)}}
+  .lhead {{$md.render(lhead)}}
   .lbody 
     BodyCanvas(v-model="value.body")
-  .lfoot {{lfoot}}
-  .foot {{foot}}
+  .lfoot {{$md.render(lfoot)}}
+  .middle 
+    .exp-title {{$md.render(title)}}
+    .exp-description {{$md.render(description)}}
+  .foot {{$md.render(foot)}}
 </template>
 
 <script>
@@ -21,6 +21,7 @@ export default {
     description: { type: String, required: false },
     lhead: { type: String, required: false },
     lfoot: { type: String, required: false },
+    head: { type: String, required: false },
     foot: { type: String, required: false },
   },
   components: {
@@ -39,11 +40,11 @@ export default {
 .gcontainer {
   display: grid;
   grid-template-columns: 1fr minmax(200px, 1fr);
-  grid-template-rows:  20px 20px minmax(0, 1fr) 20px 20px;
+  grid-template-rows:  auto auto minmax(0, 1fr) auto auto;
   grid-template-areas:  "head head "
-                        "lhead right"
-                        "lbody right"
-                        "lfoot right"
+                        "lhead middle"
+                        "lbody middle"
+                        "lfoot middle"
                         "foot foot";
   padding: 10px;
   height: 100%;

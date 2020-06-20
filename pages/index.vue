@@ -30,5 +30,6 @@ export default {
 .cardheight {
   overflow-y: auto;
   height: 8rem;
+  min-width: 200px;
 }
 </style>

@@ -1,17 +1,18 @@
+import Experiment from '~/lib/Experiment'
+
 import InfoScreen from '@/components/elements/screens/InfoScreen'
 import Questionaire from '@/components/elements/screens/Questionaire'
 import BaseQuestionnaire from '~/experiments/questionnaires/BaseQuestionnaire'
 import StudyExpQuestionnaire from '~/experiments/questionnaires/StudyExpQuestionnaire'
 
-
-const experiment = {
-  id: "embody-prestudy",
-  title: "mBody Interview",
-  description: "Beispielfragebogen",
+export default class SimpleQuestionnaire extends Experiment {
+  id = "embody-prestudy"
+  title = "emBody Interview"
+  description = "Beispielfragebogen"
   storehook(res) {
     alert(' TO DB: '+JSON.stringify(res))
-  },
-  screens: [
+  }
+  screens = [
     {
       type: InfoScreen,
       id: "welcome",
@@ -46,7 +47,6 @@ const experiment = {
         btnText: "Weiter"
       }
     },
-    
     {
       type: InfoScreen,
       id: "thanx",
@@ -58,5 +58,3 @@ const experiment = {
     },    
   ]
 }
-
-export default experiment

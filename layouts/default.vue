@@ -43,7 +43,6 @@ export default {
             to: '/experiments/' + e.expId
           }
         })
-      this.$log.debug(exp)
       return exp
     },
     items() {

@@ -1,8 +1,8 @@
 <template lang="pug">
   v-container.info-screen(fluid="")
-    .exp-title {{title}}
+    .exp-title(v-html="$md.render(title)")
     v-container.pa-4.dcontainer
-      .exp-description {{description}}
+      .exp-description(v-html="$md.render(description)")
     
 </template>
 
