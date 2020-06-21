@@ -9,7 +9,7 @@ export default class SimpleQuestionnaire extends Experiment {
   id = "embody-prestudy"
   title = "emBody Interview"
   description = "Beispielfragebogen"
-  storehook(res) {
+  onSubmit(res) {
     alert(' TO DB: '+JSON.stringify(res))
   }
   screens = [

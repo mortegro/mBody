@@ -92,9 +92,7 @@ export default {
       }
       // save it to database
       this.$log.debug(' SAVE TO DATABASE: ', res)
-      
-      // emit result
-      this.$emit('store',res)
+      this.experiment.screenSubmitted(res)
     },
     changeSubject(subj) {
       this.subject = subj

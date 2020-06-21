@@ -1,5 +1,5 @@
 <template lang="pug">
-  Experiment(v-if="experiment", ref="experiment", :experiment="experiment" :meta="meta" @store="storehook")
+  Experiment(v-if="experiment", ref="experiment", :experiment="experiment" :meta="meta")
   .jcenter.container.justify-center.align-center(v-else, fluid="")
       h1.text-center No experiment id given or experiment not found.
 </template>
@@ -31,11 +31,6 @@ export default {
 
   },
   methods: {
-    async storehook(data) {
-      if (this.experiment && this.experiment.storehook && typeof this.experiment.storehook == 'function') {
-        await this.experiment.storehook(data)
-      }
-    }
   },
 };
 </script>
