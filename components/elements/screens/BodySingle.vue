@@ -1,14 +1,14 @@
 <template lang="pug">
 .gcontainer
-  .head {{$md.render(head)}}
-  .lhead {{$md.render(lhead)}}
+  .head(v-html="$md.render(head)")
+  .lhead(v-html="$md.render(lhead)")
   .lbody 
     BodyCanvas(v-model="value.body")
-  .lfoot {{$md.render(lfoot)}}
+  .lfoot(v-html="$md.render(lfoot)")
   .middle 
-    .exp-title {{$md.render(title)}}
-    .exp-description {{$md.render(description)}}
-  .foot {{$md.render(foot)}}
+    .exp-title(v-html="$md.render(title)")
+    .exp-description(v-html="$md.render(description)")
+  .foot(v-html="$md.render(foot)")
 </template>
 
 <script>
@@ -17,12 +17,12 @@ import BodyCanvas from '@/components/elements/embody/BodyCanvas'
 export default {
    props: {
     value: {type: Object, require: false, default: {}},
-    title: { type: String, required: false },
+    title: { type: String, required: false, default: '' },
     description: { type: String, required: false },
-    lhead: { type: String, required: false },
-    lfoot: { type: String, required: false },
-    head: { type: String, required: false },
-    foot: { type: String, required: false },
+    lhead: { type: String, required: false, default: '' },
+    lfoot: { type: String, required: false, default: '' },
+    head: { type: String, required: false, default: '' },
+    foot: { type: String, required: false, default: '' },
   },
   components: {
     BodyCanvas

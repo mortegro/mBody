@@ -2,17 +2,17 @@
 .gcontainer
   .head.text-center 
   .middle
-    .exp-title {{title}}
-    .exp-description {{description}}
-  .lhead.text-center {{lhead}}
+    .exp-title(v-html="title")
+    .exp-description(v-html="description")
+  .lhead.text-center(v-html="lhead")
   .lbody 
     BodyCanvas(v-model="value.front", strokeStyle="EF5350")
-  .lfoot.text-center {{lfoot}}
-  .rhead.text-center {{rhead}}
+  .lfoot.text-center(v-html="lfoot")
+  .rhead.text-center(v-html="rhead")
   .rbody 
     BodyCanvas(v-model="value.back", strokeStyle="#5C6BC0")
-  .rfoot.text-center {{rfoot}}
-  .foot {{foot}}
+  .rfoot.text-center(v-html="rfoot")
+  .foot(v-html="foot")
 </template>
 
 <script>
@@ -24,13 +24,13 @@ export default {
   },
   props: {
     value: {type: Object, require: false, default: {}},
-    title: { type: String, required: false },
+    title: { type: String, required: false, default: '' },
     description: { type: String, required: false },
     lhead: { type: String, required: false, default: "aktive Regionen" },
-    lfoot: { type: String, required: false },
+    lfoot: { type: String, required: false, default: '' },
     rhead: { type: String, required: false, default: "deaktive Regionen" },
-    rfoot: { type: String, required: false },
-    foot: { type: String, required: false },
+    rfoot: { type: String, required: false, default: '' },
+    foot: { type: String, required: false, default: '' },
   },
   data() {
     return {

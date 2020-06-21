@@ -2,17 +2,17 @@
 .gcontainer
   .head 
   .middle
-    .exp-title {{title}}
-    .exp-description {{description}}
-  .lhead.text-center {{lhead}}
+    .exp-title(v-html="title")
+    .exp-description(v-html="description")
+  .lhead.text-center(v-html="lhead")
   .lbody 
     BodyCanvas(v-model="value.front", bgImageUrl="/vorlagen/silhouette_front.png")
-  .lfoot.text-center {{lfoot}}
-  .rhead {{rhead}}
+  .lfoot.text-center(v-html="lfoot")
+  .rhead(v-html="rhead")
   .rbody 
     BodyCanvas(v-model="value.back", bgImageUrl="/vorlagen/silhouette_back.png")
-  .rfoot.text-center {{rfoot}}
-  .foot {{foot}}
+  .rfoot.text-center(v-html="rfoot")
+  .foot(v-html="foot")
 </template>
 
 <script>
@@ -24,13 +24,13 @@ export default {
   },
   props: {
     value: {type: Object, require: false, default: {}},
-    title: { type: String, required: false },
+    title: { type: String, required: false, default: '' },
     description: { type: String, required: false },
-    lhead: { type: String, required: false },
+    lhead: { type: String, required: false, default: '' },
     lfoot: { type: String, required: false, default: "Vorderseite" },
-    rhead: { type: String, required: false },
+    rhead: { type: String, required: false, default: '' },
     rfoot: { type: String, required: false, default: "Rückseite" },
-    foot: { type: String, required: false },
+    foot: { type: String, required: false, default: '' },
   },
   data() {
     return {
