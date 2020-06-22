@@ -6,8 +6,21 @@ import Questionaire from '@/components/elements/screens/Questionaire'
 import TouchReasons from '~/experiments/questionnaires/TouchReasons'
 
 const bodyParts = [
-  { id: "Mutter", text1: "deiner Mutter", text2: "..."}, 
-  { id: "Freund", text1: "einem Freund"}, 
+  { id: "Mutter", text1: "deine Mutter", text2: "..."}, 
+  { id: "Vater", text1: "dein Vater"}, 
+  { id: "jüngere Schwester", text1: "deine jüngeren Schwester"},
+  { id: "ältere Schwester", text1: "deine ältere Schwester"},
+  { id: "jüngerer Bruder", text1: "dein jüngerer Bruder"},
+  { id: "älterer Bruder", text1: "dein älterer Bruder"},
+  { id: "Fester Freund/Freundin", text1: "dein fester Freund oder deine feste Freundin"},
+  { id: "Freund", text1: "ein Freund"},
+  { id: "Freundin", text1: "eine Freund"},  
+  { id: "Mitschüler", text1: "ein Mitschüler"},  
+  { id: "Mitschülerin", text1: "eine Mitschülerin"},    
+  { id: "Lehrer", text1: "ein Lehrer"},  
+  { id: "Lehrerin", text1: "eine Lehrerin"},   
+  { id: "Fremder", text1: "ein Fremder"},   
+  { id: "Fremde", text1: "eine Fremde"},    
 ]
 const bodyScreens = bodyParts.map( e => ([
   {
@@ -15,7 +28,7 @@ const bodyScreens = bodyParts.map( e => ([
     id: `touchaccept_${(e.id).toLowerCase()}`,
     data: {
       title: e.id,
-      description: `Bitte markiere wo du es ${e.text1} erlaust dich zu berühren.`,
+      description: `Bitte markiere, wo dich ${e.text1} berühren darf.`,
       btnText: "Weiter"
     }
   },
@@ -24,8 +37,8 @@ const bodyScreens = bodyParts.map( e => ([
     id: `touchreason_${(e.id).toLowerCase()}`,
 
     data: {
-      title: `Gründe für die Berührung von ${e.text1}`,
-      description: "....",
+      title: `Gründe für die Berührungen`,
+      description: `Gib bitte die Gründe an, warum dich ${e.text1} an diesen Stellen berühren darf.`,
       schema: TouchReasons,
       model: { treatment: {} },
       options: {},
@@ -45,7 +58,7 @@ export default class BodyPartsExperiment extends Experiment {
       id: "welcome",
       data: {
         title: "Einführung",
-        description: "In diesem Experiment siehst du einen Körperumriss. \n\n Bitte zeichnen das angegebene Körperteil auf der Vorder- und Rückseite ein.",
+        description: "In diesem Experiment untersuchen wir, wo es für dich in Ordnung ist, berührt zu werden und wo nicht. Dir wird der Name einer Person und der Umriss eines Körpers gezeigt. Denk sorgfältig darüber nach, wo an deinem Körper dich diese Person berühren darf. Deine Aufgabe besteht nun darin, die Körperregionen anzumalen, in denen eine Berührung für dich in Ordnung ist und wo nicht. Du kannst jede Region des Körpers anmalen, von Kopf bis Fuß. Bist du mit dem Malen fertig, drücke auf „weiter“ und es erscheint eine Liste von möglichen Gründen, warum dich diese Person an den markierten Stellen berühren darf. Wähle bitte für jede Person die passenden Gründe aus.",
         btnText: "Weiter"
       }
     },
