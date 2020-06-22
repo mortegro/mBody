@@ -78,6 +78,10 @@
         this.fit();
       });
     },
+    updated() {
+      console.log("updated")
+    },
+
 
     beforeDestroy() {
       window.removeEventListener('resize', this.fit);

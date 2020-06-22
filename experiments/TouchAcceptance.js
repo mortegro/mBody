@@ -4,6 +4,7 @@ import InfoScreen from '@/components/elements/screens/InfoScreen'
 import BodyFrontBack from '@/components/elements/screens/BodyFrontBack'
 import Questionaire from '@/components/elements/screens/Questionaire'
 import TouchReasons from '~/experiments/questionnaires/TouchReasons'
+import { schemaSlider } from '~/experiments/questionnaires/TouchReasons'
 
 const bodyParts = [
   { id: "Mutter", text1: "deine Mutter", text2: "..."}, 
@@ -38,8 +39,9 @@ const bodyScreens = bodyParts.map( e => ([
 
     data: {
       title: `Gründe für die Berührungen`,
-      description: `Gib bitte die Gründe an, warum dich ${e.text1} an diesen Stellen berühren darf.`,
-      schema: TouchReasons,
+      description: `Gib bitte die Gründe an, warum dich ${e.text1} berührt.`,
+      // schema: TouchReasons,
+      schema: schemaSlider,
       model: { treatment: {} },
       options: {},
       btnText: "Weiter"
