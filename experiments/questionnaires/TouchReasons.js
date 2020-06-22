@@ -16,7 +16,7 @@ export const schema = {
   },
   consoling: {
     type: 'checkbox',
-    label: 'zum Trösten',
+    label: 'zumTrösten',
     col: 6
   },
   without_any_overt_reason: {
