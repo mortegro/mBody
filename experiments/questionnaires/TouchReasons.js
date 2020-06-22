@@ -1,4 +1,5 @@
 const template = {
+
   type: 'checkbox',
   col: 6,
 }

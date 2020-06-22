@@ -60,7 +60,7 @@ export default class BodyPartsExperiment extends Experiment {
       id: "welcome",
       data: {
         title: "Einführung",
-        description: "In diesem Experiment untersuchen wir, wo es für dich in Ordnung ist, berührt zu werden und wo nicht. Dir wird der Name einer Person und der Umriss eines Körpers gezeigt. Denk sorgfältig darüber nach, wo an deinem Körper dich diese Person berühren darf. Deine Aufgabe besteht nun darin, die Körperregionen anzumalen, in denen eine Berührung für dich in Ordnung ist und wo nicht. Du kannst jede Region des Körpers anmalen, von Kopf bis Fuß. Bist du mit dem Malen fertig, drücke auf „weiter“ und es erscheint eine Liste von möglichen Gründen, warum dich diese Person an den markierten Stellen berühren darf. Wähle bitte für jede Person die passenden Gründe aus.",
+        description: "In diesem Experiment untersuchen wir, wo es für dich in Ordnung ist, berührt zu werden und wo nicht. Dir wird der Name einer Person und der Umriss eines Körpers gezeigt. Denk sorgfältig darüber nach, wo an deinem Körper dich diese Person berühren darf. Deine Aufgabe besteht nun darin, die Körperregionen anzumalen, in denen eine Berührung für dich in Ordnung ist und wo nicht. Du kannst jede Region des Körpers anmalen, von Kopf bis Fuß. Bei allen Personen wird sowohl die männliche als auch weibliche Variante erfragt, achte also genau auf das aktuelle Geschlecht.  Bist du mit dem Malen fertig, drücke auf „weiter“ und es erscheint eine Liste von möglichen Gründen, warum dich diese Person an den markierten Stellen berühren darf. Wähle bitte für jede Person die passenden Gründe aus.",
         btnText: "Weiter"
       }
     },
