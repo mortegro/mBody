@@ -61,6 +61,15 @@ export default class mBodyDemoExperiment extends Experiment {
       }
     },
     {
+      type: BodyFrontBack,
+      id: "twoside2",
+      data: {
+        title: "Einführung 2",
+        description: "Man kann auf der Vorder- und Rückseite markieren.",
+        btnText: "Weiter"
+      }
+    },
+    {
       type: BodyActDeact,
       id: "actdeact",
       data: {
