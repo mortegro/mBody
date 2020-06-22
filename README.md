@@ -51,6 +51,7 @@ You also can deploy the webapp in a docker container using docker-compose
 
 ## Configuration
 You can configure the server using environment variables. You can either set them in your shell, directly in the file nuxt.config.js or in your docker-compose file. The following environment variables are supported:
+
 * BASE_URL: base url and port under which the app is hosted
 * BACKEND: Url for the couchdb backend you want to sync with
 * PUBKEY: Public key used for encryption, see more in '~/plugins/sample_encryption'
@@ -106,6 +107,7 @@ export default class SimpleAffect extends Experiment {
 
 #### Structure
 Each experiment consists of one or many screens which will be displayed one after another. Forst you have to make some basic definitions:
+
 * id: unique id for that experiment
 * title: Short experiment title
 * description: longer description
@@ -117,6 +119,7 @@ A screen is a single page in an experiment. After finishing a screen the data is
 
 
 A screen is defined by:
+
 * id: unique id, data will be saved under this screen id
 * type: defines the component that will be used for the screen, you have to import them from '~/components/elements/'
 * data: data object for the screen component, structure differs for the different elements, most contain title, description, and btnText
@@ -141,12 +144,14 @@ screens: [
 
 #### InfoScreen
 A simple screen showing some information
+
 * title: Title
 * description: text inormation to show
 * btnText: optional, text for the next-button
 
 #### Questionnaire
 A simple screen showing some information
+
 * title: Title
 * description: text inormation to show
 * schema: form schema
@@ -158,18 +163,21 @@ The folder '~/experiments/questionnaires' contains different form schemas to be 
 
 #### BodySingle
 A single unmarked body outline you can draw on.
+
 * title: Title
 * description: text inormation to show
 * (btnText): optional, text for the next-button
 
 #### BodyFrontBack
 Two body outlines indicating a front and a back side you can draw on.
+
 * title: Title
 * description: text inormation to show
 * (btnText): optional, text for the next-button
 
 #### BodyActDeact
 Two body outlines indicating a front and a back side you can draw on.
+
 * title: Title
 * description: text inormation to show
 * (btnText): optional, text for the next-button
@@ -188,6 +196,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 Thanks to the great work:
+
 * [embody tool](https://version.aalto.fi/gitlab/eglerean/embody)
 * [NUXT](https://nuxtjs.org/), based on the great [Vue-Framework](https://vuejs.org/)
 * [vuetify](https://vuetifyjs.com/) Vue Component Framework

@@ -1,18 +1,18 @@
 import Experiment from '~/lib/Experiment'
 
+import ChooseParticipant from '@/components/elements/screens/ChooseParticipant'
 import InfoScreen from '@/components/elements/screens/InfoScreen'
 import Questionaire from '@/components/elements/screens/Questionaire'
 import BodyFrontBack from '@/components/elements/screens/BodyFrontBack'
 import BodySingle from '@/components/elements/screens/BodySingle'
 import BodyActDeact from '@/components/elements/screens/BodyActDeact'
-import ChooseParticipant from '@/components/elements/screens/ChooseParticipant'
 
 import BaseQuestionnaire from './questionnaires/BaseQuestionnaire'
 
 export default class mBodyDemoExperiment extends Experiment {
-  id = "embody-prestudy"
-  title = "Affect Representation A"
-  description = "Körperliche Aktivierungs- und Deaktivierunsmuster im Rahmen des Emotionserlebens (Erwachsenenversion)"
+  id = "mbody-demo"
+  title = "mBody Demo"
+  description = "A demonstration of the mBody screens"
   screens = [
     {
       type: ChooseParticipant,

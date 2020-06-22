@@ -1,7 +1,7 @@
 export const schema = {
   gender: { 
-    label: 'Geschlecht',
     type: 'radio',
+    label: 'Geschlecht',
     options: [ 'weiblich', 'männlich', 'divers'],
     col: 6
   },

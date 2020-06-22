@@ -6,7 +6,7 @@
     .exp-description(v-html="description")
   .lhead.text-center(v-html="lhead")
   .lbody 
-    BodyCanvas(v-model="value.front", strokeStyle="EF5350")
+    BodyCanvas(v-model="value.front", strokeStyle="#EF5350")
   .lfoot.text-center(v-html="lfoot")
   .rhead.text-center(v-html="rhead")
   .rbody 

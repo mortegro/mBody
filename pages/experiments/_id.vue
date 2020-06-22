@@ -2,10 +2,10 @@
   v-container.experiment(fluid="", v-if="experiment", ref="experiment")
     .subjinfo SubjectID: {{subject.id}}, PIN: {{subject.pin}}
     v-row
-      component(:is="actComponent", v-bind="actDefinition", v-model="screenModel", v-on:change-subject="changeSubject", v-on:completed="next")
+      component(:is="actScreen.type", v-bind="actScreen.data", v-model="screenModel", v-on:change-subject="changeSubject", v-on:completed="next")
     p.debug(v-if="debug") {{screenModel}}
     .actions
-      v-btn.button(@click="next") {{actDefinition.btnText}}
+      v-btn.button(@click="next") {{actScreen.data.btnText}}
   .jcenter.container.justify-center.align-center(v-else, fluid="")
       h1.text-center No experiment id given or experiment not found.
 </template>
@@ -17,48 +17,40 @@ export default {
   data() {
     return {
       act: 0,
-      screenModel: {},
       subject: this.$getSubject(),
+      screenModel: {},
       debug: false,
     };
   },
   computed: {
     expId() {
+      // Get experiment ID from routing parameters
       const expId = this.$route.params.id
       // this.$log.debug(`expID: ${expId}`)
       return expId
     },
+
+    meta() {
+      // Get Metadata from query
+      return this.$route.query || {}
+    },
+
     experiment() {
-      this.$log.debug(`expID: ${this.expId}`)
+      // Create new Instance of Experiment using expID and metadata
       const ExperimentClass = experiments[this.expId]
-      const exp = new ExperimentClass(this.$route.query || {})
+      const exp = new ExperimentClass(this.meta)
       // this.$log.debug(`exp: ${JSON.stringify(exp)}`)
       return exp
-    },
-    meta() {
-      return this.$route.query
     },
 
     // active screen
     actScreen() {
-      return this.experiment.screens[this.act]
-    },
-    // active component for this screen
-    actComponent() {
-      return this.actScreen.type
-    },
-    // active definition for the component
-    actDefinition() {
-      return this.actScreen.data
+      return this.experiment.screens[this.act] || {}
     },
     // button text
     btnText() {
-      return this.actDefinition.btnText || "Weiter"
+      return this.actScreen.data.btnText || "Weiter"
     },
-    // collection for saving the data
-    collection() {
-      return this.experiment.collection || 'mbody_data'
-    }
   },
   methods: {
     // transition to next screen
@@ -81,7 +73,7 @@ export default {
     },
     // initialize and clear the screen data
     initModel() {
-      this.screenModel = this.actDefinition.model || {}
+      this.screenModel = this.actScreen.data.model || {}
     },
     saveScreen() {
       // If a screen gives back a subject, set it as experiment subject
