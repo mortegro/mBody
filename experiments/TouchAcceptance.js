@@ -2,21 +2,42 @@ import Experiment from '~/lib/Experiment'
 
 import InfoScreen from '@/components/elements/screens/InfoScreen'
 import BodyFrontBack from '@/components/elements/screens/BodyFrontBack'
+import Questionaire from '@/components/elements/screens/Questionaire'
+import TouchReasons from '~/experiments/questionnaires/TouchReasons'
 
-const bodyParts = ["Kopf", "Hals", "Brust", "Rücken", "Arme", "Beine", "Po", "Hände", "Füße"]
-const bodyScreens = bodyParts.map( e => ({
-  type: BodyFrontBack,
-  id: `bodypart_${e.toLowerCase()}`,
-  data: {
-    title: e,
-    description: `Bitte markiere das Körperteil ${e} auf der Körpervorder- und -rückseite. \n Drück auf den 'Weiter'-Knopf wenn du fertig bist`,
-    btnText: "Weiter"
-  }
-}))
+const bodyParts = [
+  { id: "Mutter", text1: "deiner Mutter", text2: "..."}, 
+  { id: "Freund", text1: "einem Freund"}, 
+]
+const bodyScreens = bodyParts.map( e => ([
+  {
+    type: BodyFrontBack,
+    id: `touchaccept_${(e.id).toLowerCase()}`,
+    data: {
+      title: e.id,
+      description: `Bitte markiere wo du es ${e.text1} erlaust dich zu berühren.`,
+      btnText: "Weiter"
+    }
+  },
+  {
+    type: Questionaire,
+    id: `touchreason_${(e.id).toLowerCase()}`,
+
+    data: {
+      title: `Gründe für die Berührung von ${e.text1}`,
+      description: "....",
+      schema: TouchReasons,
+      model: { treatment: {} },
+      options: {},
+      btnText: "Weiter"
+    }
+  },
+
+]))
 
 export default class BodyPartsExperiment extends Experiment {
-  id = "bodyparts"
-  title = "Körperteile"
+  id = "touchacceptance"
+  title = "Akzeptanz von Berührungen"
   description = "Markieren von angegenben Körperregionen \n\n Kinderversion"
   screens = [
     {

@@ -46,7 +46,7 @@ export default class mBodyDemoExperiment extends Experiment {
       type: BodySingle,
       id: "oneside",
       data: {
-        title: "Einführung",
+        title: "Single Body",
         description: "Man kann auf einer Seite markieren.",
         btnText: "Weiter"
       }

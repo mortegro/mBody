@@ -9,6 +9,15 @@ export const experiments = [
     meta: { group:"test"},
   },
   { 
+    title: 'Touch Acceptance',
+    description: 'Akzeptanz von Berührungen',
+    frontpage: true,
+    menu: true,
+    icon: 'extension',
+    expId: 'TouchAcceptance', 
+    meta: { group:"test"},
+  },
+  { 
     title: 'Simple Affect',
     description: 'Einführungsexperiment für affektive Paradigmen.',
     frontpage: true,
